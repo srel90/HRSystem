@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAD108A2-E4A1-4C08-B679-CDF1DFBC97BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRSystem</RootNamespace>
+    <AssemblyName>HRSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Design">
+      <HintPath>..\..\..\DotNetBar\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=8.8.0.0, Culture=neutral, PublicKeyToken=e116d99a00eca71b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DotNetBar\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation">
+      <HintPath>..\..\..\DotNetBar\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design">
+      <HintPath>..\..\..\DotNetBar\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>C:\Users\William\Documents\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>C:\Users\William\Documents\EnterpriseLibrary\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="com\comDepartment.cs" />
+    <Compile Include="com\comExpenditure.cs" />
+    <Compile Include="com\comLeaveRight.cs" />
+    <Compile Include="com\comParty.cs" />
+    <Compile Include="com\comPeronal.cs" />
+    <Compile Include="com\comPersonalAddress.cs" />
+    <Compile Include="com\comPersonalType.cs" />
+    <Compile Include="com\comPosition.cs" />
+    <Compile Include="com\comPromoted.cs" />
+    <Compile Include="com\comSalary.cs" />
+    <Compile Include="com\comSocialTax.cs" />
+    <Compile Include="com\comUser.cs" />
+    <Compile Include="com\comWork.cs" />
+    <Compile Include="entity\enDepartment.cs" />
+    <Compile Include="entity\enExpenditure.cs" />
+    <Compile Include="entity\enLeaveRight.cs" />
+    <Compile Include="entity\enParty.cs" />
+    <Compile Include="entity\enPersonal.cs" />
+    <Compile Include="entity\enPersonalAddress.cs" />
+    <Compile Include="entity\enPersonalType.cs" />
+    <Compile Include="entity\enPosition.cs" />
+    <Compile Include="entity\enPromoted.cs" />
+    <Compile Include="entity\enSalary.cs" />
+    <Compile Include="entity\enSocialTax.cs" />
+    <Compile Include="entity\enUser.cs" />
+    <Compile Include="entity\enWork.cs" />
+    <Compile Include="form\department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\department.Designer.cs">
+      <DependentUpon>department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\departmentfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\departmentfrm.Designer.cs">
+      <DependentUpon>departmentfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\masterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\masterForm.Designer.cs">
+      <DependentUpon>masterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\party.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\party.Designer.cs">
+      <DependentUpon>party.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\partyfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\partyfrm.Designer.cs">
+      <DependentUpon>partyfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\personal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\personal.Designer.cs">
+      <DependentUpon>personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\personalType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\personalType.Designer.cs">
+      <DependentUpon>personalType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\personalTypefrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\personalTypefrm.Designer.cs">
+      <DependentUpon>personalTypefrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\position.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\position.Designer.cs">
+      <DependentUpon>position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\positionfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\positionfrm.Designer.cs">
+      <DependentUpon>positionfrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\rptpersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\rptpersonal.Designer.cs">
+      <DependentUpon>rptpersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\rptviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\rptviewer.Designer.cs">
+      <DependentUpon>rptviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\users.Designer.cs">
+      <DependentUpon>users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HRSystemDataSet.cs">
+      <DependentUpon>HRSystemDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HRSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRSystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utility.cs" />
+    <EmbeddedResource Include="form\department.resx">
+      <DependentUpon>department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\departmentfrm.resx">
+      <DependentUpon>departmentfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\masterForm.resx">
+      <DependentUpon>masterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\party.resx">
+      <DependentUpon>party.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\partyfrm.resx">
+      <DependentUpon>partyfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\personal.resx">
+      <DependentUpon>personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\personalType.resx">
+      <DependentUpon>personalType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\personalTypefrm.resx">
+      <DependentUpon>personalTypefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\position.resx">
+      <DependentUpon>position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\positionfrm.resx">
+      <DependentUpon>positionfrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\rptpersonal.resx">
+      <DependentUpon>rptpersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\rptviewer.resx">
+      <DependentUpon>rptviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\users.resx">
+      <DependentUpon>users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="reports\departmentlist.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\partylist.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\personal.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\personallist.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\personalTypelist.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\positionlist.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="HRSystemDataSet.xsc">
+      <DependentUpon>HRSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HRSystemDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HRSystemDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="HRSystemDataSet.xss">
+      <DependentUpon>HRSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\HRSystem.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\HRSystem_log.ldf">
+      <DependentUpon>HRSystem.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="images\undo.png" />
+    <None Include="Resources\undo1.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="images\notecheck32.png" />
+    <None Include="images\linedpaperminus32.png" />
+    <None Include="images\linedpaperpencil32.png" />
+    <None Include="images\linedpaperplus32.png" />
+    <None Include="images\print.gif" />
+    <None Include="images\money2.png" />
+    <None Include="images\admin.png" />
+    <None Include="images\personaltype.png" />
+    <None Include="images\position.png" />
+    <None Include="images\department.png" />
+    <None Include="images\party.png" />
+    <None Include="images\clock.png" />
+    <None Include="images\promoted.png" />
+    <None Include="images\leave.png" />
+    <None Include="images\expendition.png" />
+    <None Include="images\social.png" />
+    <None Include="images\money.png" />
+    <None Include="images\work.png" />
+    <None Include="images\home.png" />
+    <None Include="images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\login.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
