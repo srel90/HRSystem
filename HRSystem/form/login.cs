@@ -44,10 +44,12 @@ namespace HRSystem.form
                 enUser enUser=new enUser();
                 enUser.username=txtusername.Text;
                 enUser.password=txtpassword.Text;
-                if (comUser.checkUser(enUser))
+                string ret = comUser.checkUser(enUser);
+                if (!ret.Equals("false"))
                 {
                     this.Hide();
                     mainForm mainForm = new mainForm();
+                    mainForm.setstatusbar(comUser.selectUserByuserID(Convert.ToInt16(ret)).Tables[0].Rows[0]["name"].ToString());
                     mainForm.Show();
                 }
                 else

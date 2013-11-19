@@ -272,7 +272,7 @@
             this.btncancel.Size = new System.Drawing.Size(75, 67);
             this.btncancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btncancel.TabIndex = 3;
-            this.btncancel.Text = "Cancel";
+            this.btncancel.Text = "ยกเลิก";
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnsave
@@ -286,7 +286,7 @@
             this.btnsave.Size = new System.Drawing.Size(75, 67);
             this.btnsave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnsave.TabIndex = 3;
-            this.btnsave.Text = "Save";
+            this.btnsave.Text = "บันทึก";
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btndelete
@@ -300,7 +300,7 @@
             this.btndelete.Size = new System.Drawing.Size(75, 67);
             this.btndelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btndelete.TabIndex = 4;
-            this.btndelete.Text = "Delete";
+            this.btndelete.Text = "ลบ";
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnedit
@@ -314,7 +314,7 @@
             this.btnedit.Size = new System.Drawing.Size(75, 67);
             this.btnedit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnedit.TabIndex = 5;
-            this.btnedit.Text = "Edit";
+            this.btnedit.Text = "แก้ไข";
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
@@ -328,7 +328,7 @@
             this.btnadd.Size = new System.Drawing.Size(75, 67);
             this.btnadd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnadd.TabIndex = 6;
-            this.btnadd.Text = "Add";
+            this.btnadd.Text = "เพิ่ม";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // styleManager1

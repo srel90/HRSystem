@@ -21,6 +21,8 @@ namespace HRSystem.form
         personal personal;
         rptviewer rptviewer;
         rptpersonal rptpersonal;
+        rpttimetable rpttimetable;
+        timetable timetable;
         comParty comParty = new comParty();
         comDepartment comDepartment = new comDepartment();
         comPosition comPosition = new comPosition();
@@ -29,7 +31,10 @@ namespace HRSystem.form
         {
             InitializeComponent();
         }
-
+        public void setstatusbar(string status)
+        {
+            toolStripStatusLabel1.Text = "ผู้ใช้งาน : "+status;
+        }
         public void DisplayForm<T>(ref T frm) where T : Form, new()
         {
             if ((frm == null) || (frm.IsDisposed))
@@ -180,6 +185,22 @@ namespace HRSystem.form
         private void btnrptpersonal_Click(object sender, EventArgs e)
         {
             DisplayForm<rptpersonal>(ref rptpersonal);
+        }
+
+        private void btntimetable_Click(object sender, EventArgs e)
+        {
+            DisplayForm<timetable>(ref timetable);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            toolStripStatusLabel2.Text = "วันที่ : "+now.ToString();
+        }
+
+        private void btnrpttimetable_Click(object sender, EventArgs e)
+        {
+            DisplayForm<rpttimetable>(ref rpttimetable);
         }
 
     }

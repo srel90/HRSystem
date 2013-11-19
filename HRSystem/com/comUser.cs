@@ -20,7 +20,7 @@ namespace HRSystem.com
             DatabaseFactory.SetDatabaseProviderFactory(new DatabaseProviderFactory());
             db = new DatabaseProviderFactory().Create("connString");
         }
-        public bool checkUser(enUser enUser)
+        public string checkUser(enUser enUser)
         {
 
             try
@@ -32,11 +32,11 @@ namespace HRSystem.com
                 dt = db.ExecuteDataSet(Dbcmd).Tables[0];
                 if (dt.Rows.Count != 0)
                 {
-                    return true;
+                    return dt.Rows[0]["userID"].ToString();
                 }
                 else
                 {
-                    return false;
+                    return "false";
                 }
 
             }
@@ -68,6 +68,22 @@ namespace HRSystem.com
             {
                 str = "SELECT *,CASE status WHEN 1 THEN 'Active' ELSE 'Inactive' END AS statusName  FROM users;";
                 Dbcmd = db.GetSqlStringCommand(str);
+                ds = db.ExecuteDataSet(Dbcmd);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+        public DataSet selectUserByuserID(int userID)
+        {
+
+            try
+            {
+                str = "SELECT *,CASE status WHEN 1 THEN 'Active' ELSE 'Inactive' END AS statusName  FROM users WHERE userID=@userID;";
+                Dbcmd = db.GetSqlStringCommand(str);
+                db.AddInParameter(Dbcmd, "@userID", DbType.Int32, userID);
                 ds = db.ExecuteDataSet(Dbcmd);
                 return ds;
             }

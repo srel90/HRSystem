@@ -46,6 +46,13 @@
             this.txtname = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.rdostatus1 = new System.Windows.Forms.RadioButton();
             this.dgv1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this._userID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._statusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnsearch = new DevComponents.DotNetBar.ButtonX();
             this.txtsearch = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,13 +61,6 @@
             this.btnsave = new DevComponents.DotNetBar.ButtonX();
             this.btnedit = new DevComponents.DotNetBar.ButtonX();
             this.btndelete = new DevComponents.DotNetBar.ButtonX();
-            this._userID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._statusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -299,113 +299,6 @@
             this.dgv1.TabIndex = 34;
             this.dgv1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvParty_CellMouseClick);
             // 
-            // btnsearch
-            // 
-            this.btnsearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnsearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnsearch.Location = new System.Drawing.Point(179, 19);
-            this.btnsearch.Name = "btnsearch";
-            this.btnsearch.Size = new System.Drawing.Size(39, 20);
-            this.btnsearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnsearch.TabIndex = 1;
-            this.btnsearch.Text = "ค้นหา";
-            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
-            // 
-            // txtsearch
-            // 
-            // 
-            // 
-            // 
-            this.txtsearch.Border.Class = "TextBoxBorder";
-            this.txtsearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtsearch.Location = new System.Drawing.Point(6, 19);
-            this.txtsearch.Name = "txtsearch";
-            this.txtsearch.Size = new System.Drawing.Size(167, 20);
-            this.txtsearch.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnsearch);
-            this.groupBox1.Controls.Add(this.txtsearch);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(545, 49);
-            this.groupBox1.TabIndex = 33;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ค้นหาข้อมูล";
-            // 
-            // btnadd
-            // 
-            this.btnadd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnadd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnadd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnadd.Image = global::HRSystem.Properties.Resources.linedpaperplus32;
-            this.btnadd.Location = new System.Drawing.Point(12, 373);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(75, 67);
-            this.btnadd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnadd.TabIndex = 32;
-            this.btnadd.Text = "Add";
-            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
-            // 
-            // btncancel
-            // 
-            this.btncancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btncancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btncancel.Image = global::HRSystem.Properties.Resources.undo2;
-            this.btncancel.Location = new System.Drawing.Point(336, 373);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(75, 67);
-            this.btncancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btncancel.TabIndex = 28;
-            this.btncancel.Text = "Cancel";
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
-            // btnsave
-            // 
-            this.btnsave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnsave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnsave.Image = global::HRSystem.Properties.Resources.notecheck32;
-            this.btnsave.Location = new System.Drawing.Point(255, 373);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(75, 67);
-            this.btnsave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnsave.TabIndex = 29;
-            this.btnsave.Text = "Save";
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
-            // 
-            // btnedit
-            // 
-            this.btnedit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnedit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnedit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnedit.Image = global::HRSystem.Properties.Resources.linedpaperpencil32;
-            this.btnedit.Location = new System.Drawing.Point(93, 373);
-            this.btnedit.Name = "btnedit";
-            this.btnedit.Size = new System.Drawing.Size(75, 67);
-            this.btnedit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnedit.TabIndex = 31;
-            this.btnedit.Text = "Edit";
-            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
-            // 
-            // btndelete
-            // 
-            this.btndelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btndelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btndelete.Image = global::HRSystem.Properties.Resources.linedpaperminus32;
-            this.btndelete.Location = new System.Drawing.Point(174, 373);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(75, 67);
-            this.btndelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btndelete.TabIndex = 30;
-            this.btndelete.Text = "Delete";
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
-            // 
             // _userID
             // 
             this._userID.DataPropertyName = "userID";
@@ -456,6 +349,113 @@
             this._status.Name = "_status";
             this._status.ReadOnly = true;
             this._status.Visible = false;
+            // 
+            // btnsearch
+            // 
+            this.btnsearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnsearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnsearch.Location = new System.Drawing.Point(179, 19);
+            this.btnsearch.Name = "btnsearch";
+            this.btnsearch.Size = new System.Drawing.Size(39, 20);
+            this.btnsearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnsearch.TabIndex = 1;
+            this.btnsearch.Text = "ค้นหา";
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
+            // 
+            // txtsearch
+            // 
+            // 
+            // 
+            // 
+            this.txtsearch.Border.Class = "TextBoxBorder";
+            this.txtsearch.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtsearch.Location = new System.Drawing.Point(6, 19);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(167, 20);
+            this.txtsearch.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnsearch);
+            this.groupBox1.Controls.Add(this.txtsearch);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(545, 49);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ค้นหาข้อมูล";
+            // 
+            // btnadd
+            // 
+            this.btnadd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnadd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnadd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnadd.Image = global::HRSystem.Properties.Resources.linedpaperplus32;
+            this.btnadd.Location = new System.Drawing.Point(12, 373);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(75, 67);
+            this.btnadd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnadd.TabIndex = 32;
+            this.btnadd.Text = "เพิ่ม";
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
+            // 
+            // btncancel
+            // 
+            this.btncancel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btncancel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btncancel.Image = global::HRSystem.Properties.Resources.undo2;
+            this.btncancel.Location = new System.Drawing.Point(336, 373);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(75, 67);
+            this.btncancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btncancel.TabIndex = 28;
+            this.btncancel.Text = "ยกเลิก";
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
+            // btnsave
+            // 
+            this.btnsave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnsave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnsave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnsave.Image = global::HRSystem.Properties.Resources.notecheck32;
+            this.btnsave.Location = new System.Drawing.Point(255, 373);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 67);
+            this.btnsave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnsave.TabIndex = 29;
+            this.btnsave.Text = "บันทึก";
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            // btnedit
+            // 
+            this.btnedit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnedit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnedit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnedit.Image = global::HRSystem.Properties.Resources.linedpaperpencil32;
+            this.btnedit.Location = new System.Drawing.Point(93, 373);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(75, 67);
+            this.btnedit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnedit.TabIndex = 31;
+            this.btnedit.Text = "แก้ไข";
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            // 
+            // btndelete
+            // 
+            this.btndelete.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btndelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btndelete.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btndelete.Image = global::HRSystem.Properties.Resources.linedpaperminus32;
+            this.btndelete.Location = new System.Drawing.Point(174, 373);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 67);
+            this.btndelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btndelete.TabIndex = 30;
+            this.btndelete.Text = "ลบ";
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // users
             // 

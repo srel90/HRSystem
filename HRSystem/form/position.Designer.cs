@@ -44,14 +44,14 @@
             this.rdostatus1 = new System.Windows.Forms.RadioButton();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.dgv1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.btnsearch = new DevComponents.DotNetBar.ButtonX();
-            this.txtsearch = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnadd = new DevComponents.DotNetBar.ButtonX();
             this._positionID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._statusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnsearch = new DevComponents.DotNetBar.ButtonX();
+            this.txtsearch = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnadd = new DevComponents.DotNetBar.ButtonX();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -72,7 +72,7 @@
             this.btncancel.Size = new System.Drawing.Size(75, 67);
             this.btncancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btncancel.TabIndex = 12;
-            this.btncancel.Text = "Cancel";
+            this.btncancel.Text = "ยกเลิก";
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnsave
@@ -86,7 +86,7 @@
             this.btnsave.Size = new System.Drawing.Size(75, 67);
             this.btnsave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnsave.TabIndex = 13;
-            this.btnsave.Text = "Save";
+            this.btnsave.Text = "บันทึก";
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btndelete
@@ -100,7 +100,7 @@
             this.btndelete.Size = new System.Drawing.Size(75, 67);
             this.btndelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btndelete.TabIndex = 14;
-            this.btndelete.Text = "Delete";
+            this.btndelete.Text = "ลบ";
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnedit
@@ -114,7 +114,7 @@
             this.btnedit.Size = new System.Drawing.Size(75, 67);
             this.btnedit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnedit.TabIndex = 15;
-            this.btnedit.Text = "Edit";
+            this.btnedit.Text = "แก้ไข";
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // labelX3
@@ -255,6 +255,35 @@
             this.dgv1.TabIndex = 18;
             this.dgv1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvParty_CellMouseClick);
             // 
+            // _positionID
+            // 
+            this._positionID.DataPropertyName = "positionID";
+            this._positionID.HeaderText = "รหัสตำแหน่ง";
+            this._positionID.Name = "_positionID";
+            this._positionID.ReadOnly = true;
+            // 
+            // _position
+            // 
+            this._position.DataPropertyName = "position";
+            this._position.HeaderText = "ตำแหน่ง";
+            this._position.Name = "_position";
+            this._position.ReadOnly = true;
+            // 
+            // _statusName
+            // 
+            this._statusName.DataPropertyName = "statusName";
+            this._statusName.HeaderText = "สถานะ";
+            this._statusName.Name = "_statusName";
+            this._statusName.ReadOnly = true;
+            // 
+            // _status
+            // 
+            this._status.DataPropertyName = "status";
+            this._status.HeaderText = "_status";
+            this._status.Name = "_status";
+            this._status.ReadOnly = true;
+            this._status.Visible = false;
+            // 
             // btnsearch
             // 
             this.btnsearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -303,37 +332,8 @@
             this.btnadd.Size = new System.Drawing.Size(75, 67);
             this.btnadd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnadd.TabIndex = 16;
-            this.btnadd.Text = "Add";
+            this.btnadd.Text = "เพิ่ม";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
-            // 
-            // _positionID
-            // 
-            this._positionID.DataPropertyName = "positionID";
-            this._positionID.HeaderText = "รหัสตำแหน่ง";
-            this._positionID.Name = "_positionID";
-            this._positionID.ReadOnly = true;
-            // 
-            // _position
-            // 
-            this._position.DataPropertyName = "position";
-            this._position.HeaderText = "ตำแหน่ง";
-            this._position.Name = "_position";
-            this._position.ReadOnly = true;
-            // 
-            // _statusName
-            // 
-            this._statusName.DataPropertyName = "statusName";
-            this._statusName.HeaderText = "สถานะ";
-            this._statusName.Name = "_statusName";
-            this._statusName.ReadOnly = true;
-            // 
-            // _status
-            // 
-            this._status.DataPropertyName = "status";
-            this._status.HeaderText = "_status";
-            this._status.Name = "_status";
-            this._status.ReadOnly = true;
-            this._status.Visible = false;
             // 
             // position
             // 

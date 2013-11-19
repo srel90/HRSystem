@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.txtdepartmentID = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -40,6 +40,10 @@
             this.rdostatus1 = new System.Windows.Forms.RadioButton();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.dgv1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this._departmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._statusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnsearch = new DevComponents.DotNetBar.ButtonX();
             this.txtsearch = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -48,10 +52,6 @@
             this.btndelete = new DevComponents.DotNetBar.ButtonX();
             this.btnedit = new DevComponents.DotNetBar.ButtonX();
             this.btnadd = new DevComponents.DotNetBar.ButtonX();
-            this._departmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._statusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -182,14 +182,14 @@
             this._name,
             this._statusName,
             this._status});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dgv1.Location = new System.Drawing.Point(12, 74);
             this.dgv1.Name = "dgv1";
@@ -198,6 +198,35 @@
             this.dgv1.Size = new System.Drawing.Size(412, 150);
             this.dgv1.TabIndex = 18;
             this.dgv1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv1_CellMouseClick);
+            // 
+            // _departmentID
+            // 
+            this._departmentID.DataPropertyName = "departmentID";
+            this._departmentID.HeaderText = "รหัสแผนก";
+            this._departmentID.Name = "_departmentID";
+            this._departmentID.ReadOnly = true;
+            // 
+            // _name
+            // 
+            this._name.DataPropertyName = "name";
+            this._name.HeaderText = "แผนก";
+            this._name.Name = "_name";
+            this._name.ReadOnly = true;
+            // 
+            // _statusName
+            // 
+            this._statusName.DataPropertyName = "statusName";
+            this._statusName.HeaderText = "สถานะ";
+            this._statusName.Name = "_statusName";
+            this._statusName.ReadOnly = true;
+            // 
+            // _status
+            // 
+            this._status.DataPropertyName = "status";
+            this._status.HeaderText = "_status";
+            this._status.Name = "_status";
+            this._status.ReadOnly = true;
+            this._status.Visible = false;
             // 
             // btnsearch
             // 
@@ -247,7 +276,7 @@
             this.btncancel.Size = new System.Drawing.Size(75, 67);
             this.btncancel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btncancel.TabIndex = 12;
-            this.btncancel.Text = "Cancel";
+            this.btncancel.Text = "ยกเลิก";
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnsave
@@ -261,7 +290,7 @@
             this.btnsave.Size = new System.Drawing.Size(75, 67);
             this.btnsave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnsave.TabIndex = 13;
-            this.btnsave.Text = "Save";
+            this.btnsave.Text = "บันทึก";
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btndelete
@@ -275,7 +304,7 @@
             this.btndelete.Size = new System.Drawing.Size(75, 67);
             this.btndelete.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btndelete.TabIndex = 14;
-            this.btndelete.Text = "Delete";
+            this.btndelete.Text = "ลบ";
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnedit
@@ -289,7 +318,7 @@
             this.btnedit.Size = new System.Drawing.Size(75, 67);
             this.btnedit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnedit.TabIndex = 15;
-            this.btnedit.Text = "Edit";
+            this.btnedit.Text = "แก้ไข";
             this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
@@ -303,37 +332,8 @@
             this.btnadd.Size = new System.Drawing.Size(75, 67);
             this.btnadd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnadd.TabIndex = 16;
-            this.btnadd.Text = "Add";
+            this.btnadd.Text = "เพิ่ม";
             this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
-            // 
-            // _departmentID
-            // 
-            this._departmentID.DataPropertyName = "departmentID";
-            this._departmentID.HeaderText = "รหัสแผนก";
-            this._departmentID.Name = "_departmentID";
-            this._departmentID.ReadOnly = true;
-            // 
-            // _name
-            // 
-            this._name.DataPropertyName = "name";
-            this._name.HeaderText = "แผนก";
-            this._name.Name = "_name";
-            this._name.ReadOnly = true;
-            // 
-            // _statusName
-            // 
-            this._statusName.DataPropertyName = "statusName";
-            this._statusName.HeaderText = "สถานะ";
-            this._statusName.Name = "_statusName";
-            this._statusName.ReadOnly = true;
-            // 
-            // _status
-            // 
-            this._status.DataPropertyName = "status";
-            this._status.HeaderText = "_status";
-            this._status.Name = "_status";
-            this._status.ReadOnly = true;
-            this._status.Visible = false;
             // 
             // department
             // 

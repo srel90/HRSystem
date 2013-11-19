@@ -92,6 +92,7 @@
     <Compile Include="com\comPromoted.cs" />
     <Compile Include="com\comSalary.cs" />
     <Compile Include="com\comSocialTax.cs" />
+    <Compile Include="com\comTimeTable.cs" />
     <Compile Include="com\comUser.cs" />
     <Compile Include="com\comWork.cs" />
     <Compile Include="entity\enDepartment.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="entity\enPromoted.cs" />
     <Compile Include="entity\enSalary.cs" />
     <Compile Include="entity\enSocialTax.cs" />
+    <Compile Include="entity\enTimeTable.cs" />
     <Compile Include="entity\enUser.cs" />
     <Compile Include="entity\enWork.cs" />
     <Compile Include="form\department.cs">
@@ -131,12 +133,6 @@
     <Compile Include="form\mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\masterForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="form\masterForm.Designer.cs">
-      <DependentUpon>masterForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="form\party.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +150,12 @@
     </Compile>
     <Compile Include="form\personal.Designer.cs">
       <DependentUpon>personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\personalfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\personalfrm.Designer.cs">
+      <DependentUpon>personalfrm.cs</DependentUpon>
     </Compile>
     <Compile Include="form\personalType.cs">
       <SubType>Form</SubType>
@@ -185,11 +187,23 @@
     <Compile Include="form\rptpersonal.Designer.cs">
       <DependentUpon>rptpersonal.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\rpttimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\rpttimetable.Designer.cs">
+      <DependentUpon>rpttimetable.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\rptviewer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="form\rptviewer.Designer.cs">
       <DependentUpon>rptviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\timetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\timetable.Designer.cs">
+      <DependentUpon>timetable.cs</DependentUpon>
     </Compile>
     <Compile Include="form\users.cs">
       <SubType>Form</SubType>
@@ -221,9 +235,6 @@
     <EmbeddedResource Include="form\mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\masterForm.resx">
-      <DependentUpon>masterForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="form\party.resx">
       <DependentUpon>party.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\personal.resx">
       <DependentUpon>personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\personalfrm.resx">
+      <DependentUpon>personalfrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\personalType.resx">
       <DependentUpon>personalType.cs</DependentUpon>
@@ -248,8 +262,14 @@
     <EmbeddedResource Include="form\rptpersonal.resx">
       <DependentUpon>rptpersonal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\rpttimetable.resx">
+      <DependentUpon>rpttimetable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\rptviewer.resx">
       <DependentUpon>rptviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\timetable.resx">
+      <DependentUpon>timetable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\users.resx">
       <DependentUpon>users.cs</DependentUpon>
