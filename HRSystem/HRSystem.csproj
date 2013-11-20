@@ -199,6 +199,12 @@
     <Compile Include="form\rptviewer.Designer.cs">
       <DependentUpon>rptviewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\salarypaymentoneperson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\salarypaymentoneperson.Designer.cs">
+      <DependentUpon>salarypaymentoneperson.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\timetable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +274,9 @@
     <EmbeddedResource Include="form\rptviewer.resx">
       <DependentUpon>rptviewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\salarypaymentoneperson.resx">
+      <DependentUpon>salarypaymentoneperson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\timetable.resx">
       <DependentUpon>timetable.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +309,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\positionlist.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\timetablelist.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="HRSystemDataSet.xsc">

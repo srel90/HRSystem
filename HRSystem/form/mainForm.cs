@@ -23,6 +23,7 @@ namespace HRSystem.form
         rptpersonal rptpersonal;
         rpttimetable rpttimetable;
         timetable timetable;
+        salarypaymentoneperson salarypaymentoneperson;
         comParty comParty = new comParty();
         comDepartment comDepartment = new comDepartment();
         comPosition comPosition = new comPosition();
@@ -201,6 +202,11 @@ namespace HRSystem.form
         private void btnrpttimetable_Click(object sender, EventArgs e)
         {
             DisplayForm<rpttimetable>(ref rpttimetable);
+        }
+
+        private void btnpayperpersonal_Click(object sender, EventArgs e)
+        {
+            DisplayForm<salarypaymentoneperson>(ref salarypaymentoneperson);
         }
 
     }

@@ -14,6 +14,8 @@ namespace HRSystem.form
 {
     public partial class rpttimetable : DevComponents.DotNetBar.Office2007Form
     {
+        rptviewer rptviewer;
+        comTimeTable comTimeTable = new comTimeTable();
         public rpttimetable()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace HRSystem.form
 
         private void btnshow_Click(object sender, EventArgs e)
         {
-            comTimeTable comTimeTable = new comTimeTable();
+            
             DataSet ds = comTimeTable.selectTimeTable(txtpersonalCardFrom.Text, txtpersonalCardTo.Text, dateFrom.Value.ToString(), dateTo.Value.ToString());
             dgv1.DataSource = ds.Tables[0];
         }
@@ -47,6 +49,52 @@ namespace HRSystem.form
             DateTime dt = DateTime.Now;
             dateFrom.Value = dt;
             dateTo.Value = dt;
+        }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            if (dgv1.Rows.Count != 0)
+            {
+                DisplayForm<rptviewer>(ref rptviewer);
+                DataTable dt = new DataTable();
+                dt.Columns.Add("timeTableID");
+                dt.Columns.Add("personalCard");
+                dt.Columns.Add("dateTime");
+                dt.Columns.Add("timeStamp");
+                foreach (DataGridViewRow row in dgv1.Rows)
+                {
+                    DataRow dr = dt.NewRow();
+                    dr["timeTableID"] = row.Cells["timeTableID"].Value.ToString();
+                    dr["personalCard"] = row.Cells["personalCard"].Value.ToString();
+                    dr["dateTime"] = row.Cells["dateTime"].Value.ToString();
+                    dr["timeStamp"] = row.Cells["timeStamp"].Value.ToString();
+                    dt.Rows.Add(dr);
+
+                }
+                DataSet ds = new DataSet();
+                ds.Tables.Add(dt);
+                rptviewer.rptviewer_show(ds, "timetablelist.rdlc", "รายงานข้อมูลการลงเวลา");
+            }
+            else
+            {
+                MessageBox.Show("ไม่มีข้อมูลสำหรับการรายงาน");
+            }
+        }
+        public void DisplayForm<T>(ref T frm) where T : Form, new()
+        {
+            if ((frm == null) || (frm.IsDisposed))
+            {
+                frm = new T();
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+                frm.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                frm.WindowState = FormWindowState.Normal;
+                frm.BringToFront();
+            }
+
         }
     }
 }

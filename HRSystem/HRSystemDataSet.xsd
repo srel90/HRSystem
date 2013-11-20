@@ -438,6 +438,22 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="timetable" msprop:Generator_TableClassName="timetableDataTable" msprop:Generator_TableVarName="tabletimetable" msprop:Generator_RowChangedName="timetableRowChanged" msprop:Generator_TablePropName="timetable" msprop:Generator_RowDeletingName="timetableRowDeleting" msprop:Generator_RowChangingName="timetableRowChanging" msprop:Generator_RowEvHandlerName="timetableRowChangeEventHandler" msprop:Generator_RowDeletedName="timetableRowDeleted" msprop:Generator_RowClassName="timetableRow" msprop:Generator_UserTableName="timetable" msprop:Generator_RowEvArgName="timetableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="timeTableID" msdata:ReadOnly="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columntimeTableID" msprop:Generator_ColumnPropNameInRow="timeTableID" msprop:Generator_ColumnPropNameInTable="timeTableIDColumn" msprop:Generator_UserColumnName="timeTableID" type="xs:string" />
+              <xs:element name="personalCard" msprop:Generator_ColumnVarNameInTable="columnpersonalCard" msprop:Generator_ColumnPropNameInRow="personalCard" msprop:Generator_ColumnPropNameInTable="personalCardColumn" msprop:Generator_UserColumnName="personalCard" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dateTime" msprop:Generator_ColumnVarNameInTable="columndateTime" msprop:Generator_ColumnPropNameInRow="dateTime" msprop:Generator_ColumnPropNameInTable="dateTimeColumn" msprop:Generator_UserColumnName="dateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="timeStamp" msprop:Generator_ColumnVarNameInTable="columntimeStamp" msprop:Generator_ColumnPropNameInRow="timeStamp" msprop:Generator_ColumnPropNameInTable="timeStampColumn" msprop:Generator_UserColumnName="timeStamp" type="xs:duration" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
