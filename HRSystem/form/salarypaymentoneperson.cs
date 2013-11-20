@@ -16,6 +16,7 @@ namespace HRSystem.form
     public partial class salarypaymentoneperson : DevComponents.DotNetBar.Office2007Form
     {
         comTimeTable comTimeTable = new comTimeTable();
+        comPersonal comPersonal = new comPersonal();
         public salarypaymentoneperson()
         {
             InitializeComponent();
@@ -37,22 +38,35 @@ namespace HRSystem.form
         private void btnshow_Click(object sender, EventArgs e)
         {
             dgv1.Rows.Clear();
+            txtleave.Text = "";
+            txtlate.Text = "";
+            txtlatecount.Text = "";
+            txtearly.Text = "";
+            txtearlycount.Text = "";
+            txtot.Text = "";
+            progressBarX1.Value = 0;
             List<enpTimeTable> enpTimeTable = new List<enpTimeTable>();
             IEnumerable<DateTime> dtr = DateRange(dateFrom.Value, dateTo.Value);
             DataTable TimeTable = comTimeTable.selectTimeTable(txtpersonalCard.Text, txtpersonalCard.Text, dateFrom.Value.ToString(), dateTo.Value.ToString()).Tables[0];
             string timein, timeout;
-            int leave,leavecount=0,latecount=0;
-            float late;
+            double leave,late,early,latecount=0,earlycount=0,tcount=1,ot=0;
+            
+            DataTable personaldata = comPersonal.selectPersonalByPersonalCardID(Convert.ToInt16(txtpersonalCard.Text)).Tables[0];
             foreach (var it in dtr)
             {
                 timein = string.Empty;
                 timeout = string.Empty;
                 leave = 0;
                 late = 0;
+                early = 0;
+                latecount = 0;
+                earlycount = 0;
+                ot = 0;
                 for (int i = 0; i < TimeTable.Rows.Count; i++)
                 {
                     if (TimeTable.Rows[i]["dateTime"].ToString().Equals(it.ToString()))
                     {
+
                         timein = TimeTable.Rows[i]["timeStamp"].ToString();
                         if ((i + 1) < TimeTable.Rows.Count)
                         {
@@ -68,18 +82,58 @@ namespace HRSystem.form
                 if (timein.Equals(string.Empty) && timeout.Equals(string.Empty))
                 {
                     leave = 1;
-                    leavecount++;
                 }
+                if (!timein.Equals(string.Empty))
+                {
+                    DateTime StartTimein = DateTime.Parse(timein);
+                    DateTime noon = DateTime.Parse("12:00");
+                    DateTime EndTimein = DateTime.Parse(personaldata.Rows[0]["timein"].ToString());
+                    TimeSpan ts = StartTimein - EndTimein;
+                    TimeSpan ex = StartTimein - noon;//ลงเวลาเข้าหลังเที่ยง
+                    if (ts.TotalMinutes > 30 && ex.TotalMinutes<=0)//เข้างานสายเกิน 30 นาที นับเป็น สาย 1 ครั้ง และเวลาที่ลงต้องเป็นเวลาก่อนเที่ยง
+                    {
+                        late = 1;
+                        latecount = ts.TotalMinutes;
+                    }
+                }
+                if (!timeout.Equals(string.Empty))
+                {
+                    DateTime StartTimein = DateTime.Parse(timeout);
+                    DateTime EndTimein = DateTime.Parse(personaldata.Rows[0]["timeout"].ToString());
+                    TimeSpan ts = StartTimein - EndTimein;
+                    if (ts.TotalMinutes < 0)//ออกงานก่อนเวลาออก
+                    {
+                        early = 1;
+                        earlycount = Math.Abs(ts.TotalMinutes);
+                    }
+                    if (ts.TotalMinutes > 0)//ออกงานหลังเวลาออก
+                    {
+                        ot = Math.Abs(ts.TotalMinutes);
+                    }
+                }
+
+               
                 enpTimeTable.Add(new enpTimeTable()
                 {
                     date = it.ToString("yyyy-MM-dd"),
                     timein=timein,
                     timeout=timeout,
                     leave=leave,
-                    late=late
+                    late=late,
+                    latecount=latecount,
+                    early=early,
+                    earlycount=earlycount,
+                    ot=ot
                    
                 });
+                Double tick = (100.0 / dtr.Count()) * tcount;
+                progressBarX1.Value = Convert.ToInt32(Math.Ceiling(tick));
+                tcount++;
             }
+            int l1=0, l2=0, l3=0, l4=0, l5=0, l6=0;
+            DataGridViewCellStyle style = new DataGridViewCellStyle();
+            style.BackColor = Color.Red;
+            style.ForeColor = Color.Yellow;
             foreach (var it in enpTimeTable)
             {
                 int idx = dgv1.Rows.Add();
@@ -88,9 +142,31 @@ namespace HRSystem.form
                 row.Cells["_timein"].Value = it.timein;
                 row.Cells["_timeout"].Value = it.timeout;
                 row.Cells["_leave"].Value = it.leave;
+                if (it.leave > 0) row.Cells["_leave"].Style = style;
                 row.Cells["_late"].Value = it.late;
+                if (it.late > 0) row.Cells["_late"].Style = style;
+                row.Cells["_latecount"].Value = it.latecount;
+                if (it.latecount > 0) row.Cells["_latecount"].Style = style;
+                row.Cells["_early"].Value = it.early;
+                if (it.early > 0) row.Cells["_early"].Style = style;
+                row.Cells["_earlycount"].Value = it.earlycount;
+                if (it.earlycount > 0) row.Cells["_earlycount"].Style = style;
+                row.Cells["_ot"].Value = it.ot;
+                if (it.ot > 0) row.Cells["_ot"].Style = style;
+                l1 += (int)it.leave;
+                l2 += (int)it.late;
+                l3 += (int)it.latecount;
+                l4 += (int)it.early;
+                l5 += (int)it.earlycount;
+                l6 += (int)it.ot;
 
             }
+            txtleave.Text = l1.ToString();
+            txtlate.Text = l2.ToString();
+            txtlatecount.Text = l3.ToString();
+            txtearly.Text = l4.ToString();
+            txtearlycount.Text = l5.ToString();
+            txtot.Text = l6.ToString();
         }
         public IEnumerable<DateTime> DateRange(DateTime fromDate, DateTime toDate)
         {
@@ -110,8 +186,12 @@ namespace HRSystem.form
         public string date { get; set; }
         public string timein { get; set; }
         public string timeout { get; set; }
-        public int leave { get; set; }
-        public float late { get; set; }
+        public double leave { get; set; }
+        public double late { get; set; }
+        public double latecount { get; set; }
+        public double early { get; set; }
+        public double earlycount { get; set; }
+        public double ot { get; set; }
     }
     
 }

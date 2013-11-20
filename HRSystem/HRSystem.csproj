@@ -340,11 +340,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\HRSystem.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\HRSystem_log.ldf">
       <DependentUpon>HRSystem.mdf</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="images\undo.png" />
     <None Include="Resources\undo1.png" />

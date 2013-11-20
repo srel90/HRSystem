@@ -374,6 +374,8 @@ namespace HRSystem.form
             enWork.expireDate = (DateTime)dtexpireDate.Value;
             enWork.issueAddress = txtissueAddress.Text;
             enWork.idCardAddress = txtidCardAddress.Text;
+            enWork.timein = txttimein.Text;
+            enWork.timeout = txttimeout.Text;
 
             enSalary.salaryID =  Convert.ToInt16(string.IsNullOrEmpty(txtsalaryID.Text) ? null : txtsalaryID.Text); 
             enSalary.personalID = personalID;
@@ -955,6 +957,8 @@ namespace HRSystem.form
                     dtexpireDate.Value = (DateTime)dt.Rows[0]["expireDate"];
                     txtissueAddress.Text = dt.Rows[0]["issueAddress"].ToString();
                     txtidCardAddress.Text = dt.Rows[0]["idCardAddress"].ToString();
+                    txttimein.Text = dt.Rows[0]["timein"].ToString();
+                    txttimeout.Text = dt.Rows[0]["timeout"].ToString();
                 }
                 dt = comSalary.selectAllSalaryByPersonalID(personalID).Tables[0];
                 if (dt.Rows.Count != 0)
@@ -1123,6 +1127,8 @@ namespace HRSystem.form
             dtexpireDate.Enabled = false;
             txtissueAddress.Enabled = false;
             txtidCardAddress.Enabled = false;
+            txttimein.Enabled = false;
+            txttimeout.Enabled = false;
 
             txtbank.Enabled = false;
             txtaccountNumber.Enabled = false;
@@ -1212,6 +1218,8 @@ namespace HRSystem.form
             dtexpireDate.Enabled = true;
             txtissueAddress.Enabled = true;
             txtidCardAddress.Enabled = true;
+            txttimein.Enabled = true;
+            txttimeout.Enabled = true;
 
             txtbank.Enabled = true;
             txtaccountNumber.Enabled = true;
@@ -1289,6 +1297,8 @@ namespace HRSystem.form
             dtexpireDate.Value = DateTime.Now;
             txtissueAddress.Text = "";
             txtidCardAddress.Text = "";
+            txttimein.Text="";
+            txttimeout.Text = "";
 
             txtbank.Text = "";
             txtaccountNumber.Text = "";

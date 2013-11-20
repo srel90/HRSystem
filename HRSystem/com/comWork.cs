@@ -101,7 +101,9 @@ namespace HRSystem.com
                 str += "issueDate,";
                 str += "expireDate,";
                 str += "issueAddress,";
-                str += "idCardAddress";
+                str += "idCardAddress,";
+                str += "timein,";
+                str += "timeout";
                 str += ")VALUES(";
                 str += "@personalID,";
                 str += "@partyID,";
@@ -117,7 +119,9 @@ namespace HRSystem.com
                 str += "@issueDate,";
                 str += "@expireDate,";
                 str += "@issueAddress,";
-                str += "@idCardAddress";
+                str += "@idCardAddress,";
+                str += "@timein,";
+                str += "@timeout";
                 str += ");";
                 Dbcmd = db.GetSqlStringCommand(str);
                 db.AddInParameter(Dbcmd, "@personalID", DbType.Int32, enWork.personalID);
@@ -135,6 +139,8 @@ namespace HRSystem.com
                 db.AddInParameter(Dbcmd, "@expireDate", DbType.DateTime, enWork.expireDate);
                 db.AddInParameter(Dbcmd, "@issueAddress", DbType.String, enWork.issueAddress);
                 db.AddInParameter(Dbcmd, "@idCardAddress", DbType.String, enWork.idCardAddress);
+                db.AddInParameter(Dbcmd, "@timein", DbType.String, enWork.timein);
+                db.AddInParameter(Dbcmd, "@timeout", DbType.String, enWork.timeout);
                 db.ExecuteNonQuery(Dbcmd);
                 return true;
             }
@@ -162,7 +168,9 @@ namespace HRSystem.com
                 str += "issueDate=@issueDate,";
                 str += "expireDate=@expireDate,";
                 str += "issueAddress=@issueAddress,";
-                str += "idCardAddress=@idCardAddress";
+                str += "idCardAddress=@idCardAddress,";
+                str += "timein=@timein,";
+                str += "timeout=@timeout";
                 str += " WHERE workID=@workID;";
                 Dbcmd = db.GetSqlStringCommand(str);
                 db.AddInParameter(Dbcmd, "@personalID", DbType.Int32, enWork.personalID);
@@ -180,6 +188,8 @@ namespace HRSystem.com
                 db.AddInParameter(Dbcmd, "@expireDate", DbType.DateTime, enWork.expireDate);
                 db.AddInParameter(Dbcmd, "@issueAddress", DbType.String, enWork.issueAddress);
                 db.AddInParameter(Dbcmd, "@idCardAddress", DbType.String, enWork.idCardAddress);
+                db.AddInParameter(Dbcmd, "@timein", DbType.String, enWork.timein);
+                db.AddInParameter(Dbcmd, "@timeout", DbType.String, enWork.timeout);
                 db.AddInParameter(Dbcmd, "@workID", DbType.Int32, enWork.workID);
                 db.ExecuteNonQuery(Dbcmd);
                 return true;

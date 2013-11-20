@@ -24,5 +24,7 @@ namespace HRSystem.entity
         public DateTime expireDate { get; set; }
         public string issueAddress { get; set; }
         public string idCardAddress { get; set; }
+        public string timein { get; set; }
+        public string timeout { get; set; }
     }
 }

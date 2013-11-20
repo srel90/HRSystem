@@ -73,6 +73,29 @@ namespace HRSystem.com
                 throw new Exception(ex.Message);
             }
         }
+        public DataSet selectPersonalByPersonalCardID(int personalCard)
+        {
+
+            try
+            {
+                str = "SELECT *,CASE p.status WHEN 1 THEN 'Active' ELSE 'Inactive' END AS statusName  from personal p ";
+                str += "left outer join personalAddress pa on p.personalID=pa.personalID ";
+                str += "left outer join work w on p.personalID=w.personalID ";
+                str += "left outer join party pr on w.partyID=pr.partyID ";
+                str += "left outer join department d on w.departmentID=d.departmentID ";
+                str += "left outer join position ps on w.positionID=ps.position ";
+                str += "left outer join personalType pt on w.personalTypeID=pt.personalTypeID ";
+                str += "left outer join salary sa on p.personalID=sa.personalID ";
+                str += "left outer join socialTax so on p.personalID=so.personalID where p.personalCard=" + personalCard;
+                Dbcmd = db.GetSqlStringCommand(str);
+                ds = db.ExecuteDataSet(Dbcmd);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         public DataSet selectPersonalList()
         {
 
