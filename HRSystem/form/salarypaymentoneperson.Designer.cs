@@ -29,6 +29,16 @@
         private void InitializeComponent()
         {
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this._personalCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._timein = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._timeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._leave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._late = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._latecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._early = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._earlycount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnprint = new DevComponents.DotNetBar.ButtonX();
             this.btnshow = new DevComponents.DotNetBar.ButtonX();
@@ -45,15 +55,6 @@
             this.txtlate = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label6 = new System.Windows.Forms.Label();
             this.txtlatecount = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this._date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._timein = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._timeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._leave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._late = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._latecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._early = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._earlycount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.txtearly = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,6 +76,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._personalCard,
             this._date,
             this._timein,
             this._timeout,
@@ -90,6 +92,76 @@
             this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv1.Size = new System.Drawing.Size(761, 276);
             this.dgv1.TabIndex = 3;
+            // 
+            // _personalCard
+            // 
+            this._personalCard.HeaderText = "_personalCard";
+            this._personalCard.Name = "_personalCard";
+            this._personalCard.ReadOnly = true;
+            this._personalCard.Visible = false;
+            // 
+            // _date
+            // 
+            this._date.DataPropertyName = "_date";
+            this._date.HeaderText = "วันที่";
+            this._date.Name = "_date";
+            this._date.ReadOnly = true;
+            // 
+            // _timein
+            // 
+            this._timein.DataPropertyName = "_timein";
+            this._timein.HeaderText = "เวลาเข้า";
+            this._timein.Name = "_timein";
+            this._timein.ReadOnly = true;
+            // 
+            // _timeout
+            // 
+            this._timeout.DataPropertyName = "_timeout";
+            this._timeout.HeaderText = "เวลาออก";
+            this._timeout.Name = "_timeout";
+            this._timeout.ReadOnly = true;
+            // 
+            // _leave
+            // 
+            this._leave.DataPropertyName = "_leave";
+            this._leave.HeaderText = "ขาดงาน";
+            this._leave.Name = "_leave";
+            this._leave.ReadOnly = true;
+            // 
+            // _late
+            // 
+            this._late.DataPropertyName = "_late";
+            this._late.HeaderText = "เข้าสาย >30 นาที";
+            this._late.Name = "_late";
+            this._late.ReadOnly = true;
+            // 
+            // _latecount
+            // 
+            this._latecount.DataPropertyName = "_latecount";
+            this._latecount.HeaderText = "เข้าสาย(นาที)";
+            this._latecount.Name = "_latecount";
+            this._latecount.ReadOnly = true;
+            // 
+            // _early
+            // 
+            this._early.DataPropertyName = "_early";
+            this._early.HeaderText = "ออกก่อน";
+            this._early.Name = "_early";
+            this._early.ReadOnly = true;
+            // 
+            // _earlycount
+            // 
+            this._earlycount.DataPropertyName = "_earlycount";
+            this._earlycount.HeaderText = "ออกก่อน(นาที)";
+            this._earlycount.Name = "_earlycount";
+            this._earlycount.ReadOnly = true;
+            // 
+            // _ot
+            // 
+            this._ot.DataPropertyName = "_ot";
+            this._ot.HeaderText = "OT";
+            this._ot.Name = "_ot";
+            this._ot.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -364,69 +436,6 @@
             this.txtlatecount.Size = new System.Drawing.Size(43, 20);
             this.txtlatecount.TabIndex = 33;
             // 
-            // _date
-            // 
-            this._date.DataPropertyName = "_date";
-            this._date.HeaderText = "วันที่";
-            this._date.Name = "_date";
-            this._date.ReadOnly = true;
-            // 
-            // _timein
-            // 
-            this._timein.DataPropertyName = "_timein";
-            this._timein.HeaderText = "เวลาเข้า";
-            this._timein.Name = "_timein";
-            this._timein.ReadOnly = true;
-            // 
-            // _timeout
-            // 
-            this._timeout.DataPropertyName = "_timeout";
-            this._timeout.HeaderText = "เวลาออก";
-            this._timeout.Name = "_timeout";
-            this._timeout.ReadOnly = true;
-            // 
-            // _leave
-            // 
-            this._leave.DataPropertyName = "_leave";
-            this._leave.HeaderText = "ขาดงาน";
-            this._leave.Name = "_leave";
-            this._leave.ReadOnly = true;
-            // 
-            // _late
-            // 
-            this._late.DataPropertyName = "_late";
-            this._late.HeaderText = "เข้าสาย >30 นาที";
-            this._late.Name = "_late";
-            this._late.ReadOnly = true;
-            // 
-            // _latecount
-            // 
-            this._latecount.DataPropertyName = "_latecount";
-            this._latecount.HeaderText = "เข้าสาย(นาที)";
-            this._latecount.Name = "_latecount";
-            this._latecount.ReadOnly = true;
-            // 
-            // _early
-            // 
-            this._early.DataPropertyName = "_early";
-            this._early.HeaderText = "ออกก่อน";
-            this._early.Name = "_early";
-            this._early.ReadOnly = true;
-            // 
-            // _earlycount
-            // 
-            this._earlycount.DataPropertyName = "_earlycount";
-            this._earlycount.HeaderText = "ออกก่อน(นาที)";
-            this._earlycount.Name = "_earlycount";
-            this._earlycount.ReadOnly = true;
-            // 
-            // _ot
-            // 
-            this._ot.DataPropertyName = "_ot";
-            this._ot.HeaderText = "OT";
-            this._ot.Name = "_ot";
-            this._ot.ReadOnly = true;
-            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -542,15 +551,6 @@
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtpersonalCard;
         private DevComponents.DotNetBar.Controls.ProgressBarX progressBarX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _timein;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _timeout;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _leave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _late;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _latecount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _early;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _earlycount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _ot;
         private System.Windows.Forms.Label label2;
         private DevComponents.DotNetBar.Controls.TextBoxX txtleave;
         private System.Windows.Forms.Label label5;
@@ -563,5 +563,15 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtearlycount;
         private System.Windows.Forms.Label label9;
         private DevComponents.DotNetBar.Controls.TextBoxX txtot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _personalCard;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _timein;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _timeout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _leave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _late;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _latecount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _early;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _earlycount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _ot;
     }
 }

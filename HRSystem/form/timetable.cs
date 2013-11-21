@@ -39,15 +39,18 @@ namespace HRSystem.form
                     foreach (var it in lines)
                     {
                         line = Regex.Replace(it, @"\s+", " ").Trim().Split(' ');
-                        if (line.Length == 6)
+                        if (line.Length == 7)
                         {
                             formatchk = true;
                             int idx = gridtimetable.Rows.Add();
                             DataGridViewRow row = gridtimetable.Rows[idx];
                             row.Cells["_personalIDCard"].Value = line[0].ToString();
-                            string[] dt = line[2].Split('/');
-                            row.Cells["_date"].Value = dt[2]+"-"+dt[1]+"-"+dt[0];
-                            row.Cells["_time"].Value = line[3].ToString();
+                            string[] dt = line[1].Split('/');
+                            row.Cells["_timetable"].Value = dt[2]+"-"+dt[1]+"-"+dt[0];
+                            row.Cells["_onduty"].Value = line[3].ToString();
+                            row.Cells["_offduty"].Value = line[4].ToString();
+                            row.Cells["_clockIn"].Value = line[5].ToString();
+                            row.Cells["_clockOut"].Value = line[6].ToString();
                         }
                         
                     }
@@ -73,8 +76,11 @@ namespace HRSystem.form
                     Double tick = (100.0/rowcount)*i;
                     progressBarX1.Value =Convert.ToInt32(Math.Ceiling(tick));
                     enTimeTable.personalCard=row.Cells["_personalIDCard"].Value.ToString();
-                    enTimeTable.dateTime = row.Cells["_date"].Value.ToString();
-                    enTimeTable.timeStamp = row.Cells["_time"].Value.ToString();
+                    enTimeTable.timetable = row.Cells["_timetable"].Value.ToString();
+                    enTimeTable.onduty = row.Cells["_onduty"].Value.ToString();
+                    enTimeTable.offduty = row.Cells["_offduty"].Value.ToString();
+                    enTimeTable.clockIn = row.Cells["_clockIn"].Value.ToString();
+                    enTimeTable.clockOut = row.Cells["_clockOut"].Value.ToString();
                     comTimeTable.insertTimeTable(enTimeTable);
                     i++;
                 }

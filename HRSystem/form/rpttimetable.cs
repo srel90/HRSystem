@@ -48,7 +48,6 @@ namespace HRSystem.form
         {
             DateTime dt = DateTime.Now;
             dateFrom.Value = dt;
-            dateTo.Value = dt;
         }
 
         private void btnprint_Click(object sender, EventArgs e)
@@ -59,15 +58,21 @@ namespace HRSystem.form
                 DataTable dt = new DataTable();
                 dt.Columns.Add("timeTableID");
                 dt.Columns.Add("personalCard");
-                dt.Columns.Add("dateTime");
-                dt.Columns.Add("timeStamp");
+                dt.Columns.Add("timetable");
+                dt.Columns.Add("onduty");
+                dt.Columns.Add("offduty");
+                dt.Columns.Add("clockIn");
+                dt.Columns.Add("clockOut");
                 foreach (DataGridViewRow row in dgv1.Rows)
                 {
                     DataRow dr = dt.NewRow();
-                    dr["timeTableID"] = row.Cells["timeTableID"].Value.ToString();
-                    dr["personalCard"] = row.Cells["personalCard"].Value.ToString();
-                    dr["dateTime"] = row.Cells["dateTime"].Value.ToString();
-                    dr["timeStamp"] = row.Cells["timeStamp"].Value.ToString();
+                    dr["timeTableID"] = row.Cells["_timeTableID"].Value.ToString();
+                    dr["personalCard"] = row.Cells["_personalCard"].Value.ToString();
+                    dr["timetable"] = row.Cells["_timetable"].Value.ToString();
+                    dr["onduty"] = row.Cells["_onduty"].Value.ToString();
+                    dr["offduty"] = row.Cells["_offduty"].Value.ToString();
+                    dr["clockIn"] = row.Cells["_clockIn"].Value.ToString();
+                    dr["clockOut"] = row.Cells["_clockOut"].Value.ToString();
                     dt.Rows.Add(dr);
 
                 }
@@ -95,6 +100,18 @@ namespace HRSystem.form
                 frm.BringToFront();
             }
 
+        }
+
+        private void dateFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dateTo.Value = NextMonth(dateFrom.Value);
+        }
+        private DateTime NextMonth(DateTime date)
+        {
+            if (date.Day != DateTime.DaysInMonth(date.Year, date.Month))
+                return date.AddMonths(1).AddDays(-1);
+            else
+                return date.AddDays(1).AddMonths(1).AddDays(-1);
         }
     }
 }

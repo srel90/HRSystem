@@ -31,16 +31,39 @@
             this.components = new System.ComponentModel.Container();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
-            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
-            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnpayperpersonal = new DevComponents.DotNetBar.ButtonItem();
+            this.btnpaypergroup = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnpersonal = new DevComponents.DotNetBar.ButtonItem();
+            this.btnaddress = new DevComponents.DotNetBar.ButtonItem();
+            this.btnwork = new DevComponents.DotNetBar.ButtonItem();
+            this.btnsalary = new DevComponents.DotNetBar.ButtonItem();
+            this.btnsocialtax = new DevComponents.DotNetBar.ButtonItem();
+            this.btnexpenditure = new DevComponents.DotNetBar.ButtonItem();
+            this.btnleaveright = new DevComponents.DotNetBar.ButtonItem();
+            this.btnpromoted = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar3 = new DevComponents.DotNetBar.RibbonBar();
+            this.btntimetable = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar5 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnrptparty = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrptdepartment = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrptposition = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrptpersonaltype = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrptpersonal = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrpttimetable = new DevComponents.DotNetBar.ButtonItem();
+            this.btnrptpaysalary = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel1 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnparty = new DevComponents.DotNetBar.ButtonItem();
+            this.btndepartment = new DevComponents.DotNetBar.ButtonItem();
+            this.btnposition = new DevComponents.DotNetBar.ButtonItem();
+            this.btnpersonaltype = new DevComponents.DotNetBar.ButtonItem();
+            this.btnuser = new DevComponents.DotNetBar.ButtonItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -61,36 +84,13 @@
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnpayperpersonal = new DevComponents.DotNetBar.ButtonItem();
-            this.btnpaypergroup = new DevComponents.DotNetBar.ButtonItem();
-            this.btnpersonal = new DevComponents.DotNetBar.ButtonItem();
-            this.btnaddress = new DevComponents.DotNetBar.ButtonItem();
-            this.btnwork = new DevComponents.DotNetBar.ButtonItem();
-            this.btnsalary = new DevComponents.DotNetBar.ButtonItem();
-            this.btnsocialtax = new DevComponents.DotNetBar.ButtonItem();
-            this.btnexpenditure = new DevComponents.DotNetBar.ButtonItem();
-            this.btnleaveright = new DevComponents.DotNetBar.ButtonItem();
-            this.btnpromoted = new DevComponents.DotNetBar.ButtonItem();
-            this.btntimetable = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrptparty = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrptdepartment = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrptposition = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrptpersonaltype = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrptpersonal = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrpttimetable = new DevComponents.DotNetBar.ButtonItem();
-            this.btnrptpaysalary = new DevComponents.DotNetBar.ButtonItem();
-            this.btnparty = new DevComponents.DotNetBar.ButtonItem();
-            this.btndepartment = new DevComponents.DotNetBar.ButtonItem();
-            this.btnposition = new DevComponents.DotNetBar.ButtonItem();
-            this.btnpersonaltype = new DevComponents.DotNetBar.ButtonItem();
-            this.btnuser = new DevComponents.DotNetBar.ButtonItem();
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.ribbonControl1.SuspendLayout();
-            this.ribbonPanel2.SuspendLayout();
-            this.ribbonPanel5.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
-            this.ribbonPanel1.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
+            this.ribbonPanel5.SuspendLayout();
+            this.ribbonPanel1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +128,85 @@
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 1;
             this.ribbonControl1.Text = "ribbonControl1";
+            // 
+            // ribbonPanel4
+            // 
+            this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel4.Controls.Add(this.ribbonBar4);
+            this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel4.Location = new System.Drawing.Point(0, 53);
+            this.ribbonPanel4.Name = "ribbonPanel4";
+            this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel4.Size = new System.Drawing.Size(1169, 97);
+            // 
+            // 
+            // 
+            this.ribbonPanel4.Style.Class = "";
+            this.ribbonPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel4.StyleMouseDown.Class = "";
+            this.ribbonPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel4.StyleMouseOver.Class = "";
+            this.ribbonPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel4.TabIndex = 4;
+            // 
+            // ribbonBar4
+            // 
+            this.ribbonBar4.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar4.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar4.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar4.BackgroundStyle.Class = "";
+            this.ribbonBar4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar4.ContainerControlProcessDialogKey = true;
+            this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnpayperpersonal,
+            this.btnpaypergroup});
+            this.ribbonBar4.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar4.Name = "ribbonBar4";
+            this.ribbonBar4.Size = new System.Drawing.Size(212, 94);
+            this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar4.TabIndex = 0;
+            this.ribbonBar4.Text = "ระบบการจ่ายเงินเดือน";
+            // 
+            // 
+            // 
+            this.ribbonBar4.TitleStyle.Class = "";
+            this.ribbonBar4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar4.TitleStyleMouseOver.Class = "";
+            this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btnpayperpersonal
+            // 
+            this.btnpayperpersonal.Image = global::HRSystem.Properties.Resources.money1;
+            this.btnpayperpersonal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnpayperpersonal.Name = "btnpayperpersonal";
+            this.btnpayperpersonal.SubItemsExpandWidth = 14;
+            this.btnpayperpersonal.Text = "จ่ายเงินเดือนรายบุคคล";
+            this.btnpayperpersonal.Click += new System.EventHandler(this.btnpayperpersonal_Click);
+            // 
+            // btnpaypergroup
+            // 
+            this.btnpaypergroup.Image = global::HRSystem.Properties.Resources.money2;
+            this.btnpaypergroup.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnpaypergroup.Name = "btnpaypergroup";
+            this.btnpaypergroup.SubItemsExpandWidth = 14;
+            this.btnpaypergroup.Text = "จ่ายเงินเดือนแบบกลุ่ม";
+            this.btnpaypergroup.Click += new System.EventHandler(this.btnpaypergroup_Click);
             // 
             // ribbonPanel2
             // 
@@ -197,6 +276,149 @@
             this.ribbonBar2.TitleStyleMouseOver.Class = "";
             this.ribbonBar2.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
+            // btnpersonal
+            // 
+            this.btnpersonal.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnpersonal.Image = global::HRSystem.Properties.Resources.user;
+            this.btnpersonal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnpersonal.Name = "btnpersonal";
+            this.btnpersonal.SubItemsExpandWidth = 14;
+            this.btnpersonal.Text = "รายละเอียดพนักงาน";
+            this.btnpersonal.Click += new System.EventHandler(this.btnpersonal_Click);
+            // 
+            // btnaddress
+            // 
+            this.btnaddress.Image = global::HRSystem.Properties.Resources.home;
+            this.btnaddress.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnaddress.Name = "btnaddress";
+            this.btnaddress.SubItemsExpandWidth = 14;
+            this.btnaddress.Text = "ที่อยู่อาศัย";
+            this.btnaddress.Click += new System.EventHandler(this.btnaddress_Click);
+            // 
+            // btnwork
+            // 
+            this.btnwork.Image = global::HRSystem.Properties.Resources.work;
+            this.btnwork.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnwork.Name = "btnwork";
+            this.btnwork.SubItemsExpandWidth = 14;
+            this.btnwork.Text = "การทำงาน";
+            this.btnwork.Click += new System.EventHandler(this.btnwork_Click);
+            // 
+            // btnsalary
+            // 
+            this.btnsalary.Image = global::HRSystem.Properties.Resources.money;
+            this.btnsalary.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnsalary.Name = "btnsalary";
+            this.btnsalary.SubItemsExpandWidth = 14;
+            this.btnsalary.Text = "เงินเดือน";
+            this.btnsalary.Click += new System.EventHandler(this.btnsalary_Click);
+            // 
+            // btnsocialtax
+            // 
+            this.btnsocialtax.Image = global::HRSystem.Properties.Resources.social;
+            this.btnsocialtax.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnsocialtax.Name = "btnsocialtax";
+            this.btnsocialtax.SubItemsExpandWidth = 14;
+            this.btnsocialtax.Text = "ประกันสังคม";
+            this.btnsocialtax.Click += new System.EventHandler(this.btnsocialtax_Click);
+            // 
+            // btnexpenditure
+            // 
+            this.btnexpenditure.Image = global::HRSystem.Properties.Resources.expendition;
+            this.btnexpenditure.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnexpenditure.Name = "btnexpenditure";
+            this.btnexpenditure.SubItemsExpandWidth = 14;
+            this.btnexpenditure.Text = "รายได้ / รายการหัก";
+            this.btnexpenditure.Click += new System.EventHandler(this.btnexpenditure_Click);
+            // 
+            // btnleaveright
+            // 
+            this.btnleaveright.Image = global::HRSystem.Properties.Resources.leave;
+            this.btnleaveright.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnleaveright.Name = "btnleaveright";
+            this.btnleaveright.SubItemsExpandWidth = 14;
+            this.btnleaveright.Text = "สิทธิ์การลา";
+            this.btnleaveright.Click += new System.EventHandler(this.btnleaveright_Click);
+            // 
+            // btnpromoted
+            // 
+            this.btnpromoted.Image = global::HRSystem.Properties.Resources.promoted;
+            this.btnpromoted.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnpromoted.Name = "btnpromoted";
+            this.btnpromoted.SubItemsExpandWidth = 14;
+            this.btnpromoted.Text = "การปรับเงินเดือน";
+            this.btnpromoted.Click += new System.EventHandler(this.btnpromoted_Click);
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel3.Controls.Add(this.ribbonBar3);
+            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1169, 150);
+            // 
+            // 
+            // 
+            this.ribbonPanel3.Style.Class = "";
+            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseDown.Class = "";
+            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonPanel3.StyleMouseOver.Class = "";
+            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonPanel3.TabIndex = 3;
+            this.ribbonPanel3.Visible = false;
+            // 
+            // ribbonBar3
+            // 
+            this.ribbonBar3.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar3.BackgroundMouseOverStyle.Class = "";
+            this.ribbonBar3.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar3.BackgroundStyle.Class = "";
+            this.ribbonBar3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.ribbonBar3.ContainerControlProcessDialogKey = true;
+            this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btntimetable});
+            this.ribbonBar3.Location = new System.Drawing.Point(3, 0);
+            this.ribbonBar3.Name = "ribbonBar3";
+            this.ribbonBar3.Size = new System.Drawing.Size(141, 147);
+            this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar3.TabIndex = 3;
+            this.ribbonBar3.Text = "ข้อมูลเวลาทำงาน";
+            // 
+            // 
+            // 
+            this.ribbonBar3.TitleStyle.Class = "";
+            this.ribbonBar3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // 
+            // 
+            this.ribbonBar3.TitleStyleMouseOver.Class = "";
+            this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // 
+            // btntimetable
+            // 
+            this.btntimetable.Image = global::HRSystem.Properties.Resources.clock;
+            this.btntimetable.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btntimetable.Name = "btntimetable";
+            this.btntimetable.SubItemsExpandWidth = 14;
+            this.btntimetable.Text = "ดึงเวลาทำงานจากเครื่องสแกน";
+            this.btntimetable.Click += new System.EventHandler(this.btntimetable_Click);
+            // 
             // ribbonPanel5
             // 
             this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -264,66 +486,68 @@
             this.ribbonBar5.TitleStyleMouseOver.Class = "";
             this.ribbonBar5.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // ribbonPanel4
+            // btnrptparty
             // 
-            this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel4.Controls.Add(this.ribbonBar4);
-            this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel4.Location = new System.Drawing.Point(0, 53);
-            this.ribbonPanel4.Name = "ribbonPanel4";
-            this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel4.Size = new System.Drawing.Size(1169, 97);
+            this.btnrptparty.Image = global::HRSystem.Properties.Resources.party;
+            this.btnrptparty.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrptparty.Name = "btnrptparty";
+            this.btnrptparty.SubItemsExpandWidth = 14;
+            this.btnrptparty.Text = "ข้อมูลฝ่าย";
+            this.btnrptparty.Click += new System.EventHandler(this.btnrptparty_Click);
             // 
+            // btnrptdepartment
             // 
+            this.btnrptdepartment.Image = global::HRSystem.Properties.Resources.department;
+            this.btnrptdepartment.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrptdepartment.Name = "btnrptdepartment";
+            this.btnrptdepartment.SubItemsExpandWidth = 14;
+            this.btnrptdepartment.Text = "ข้อมูลแผนก";
+            this.btnrptdepartment.Click += new System.EventHandler(this.btnrptdepartment_Click);
             // 
-            this.ribbonPanel4.Style.Class = "";
-            this.ribbonPanel4.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // btnrptposition
             // 
+            this.btnrptposition.Image = global::HRSystem.Properties.Resources.position;
+            this.btnrptposition.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrptposition.Name = "btnrptposition";
+            this.btnrptposition.SubItemsExpandWidth = 14;
+            this.btnrptposition.Text = "ข้อมูลตำแหน่ง";
+            this.btnrptposition.Click += new System.EventHandler(this.btnrptposition_Click);
             // 
+            // btnrptpersonaltype
             // 
-            this.ribbonPanel4.StyleMouseDown.Class = "";
-            this.ribbonPanel4.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btnrptpersonaltype.Image = global::HRSystem.Properties.Resources.personaltype;
+            this.btnrptpersonaltype.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrptpersonaltype.Name = "btnrptpersonaltype";
+            this.btnrptpersonaltype.SubItemsExpandWidth = 14;
+            this.btnrptpersonaltype.Text = "ข้อมูลประเภทพนักงาน";
+            this.btnrptpersonaltype.Click += new System.EventHandler(this.btnrptpersonaltype_Click);
             // 
+            // btnrptpersonal
             // 
+            this.btnrptpersonal.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
+            this.btnrptpersonal.Image = global::HRSystem.Properties.Resources.user;
+            this.btnrptpersonal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrptpersonal.Name = "btnrptpersonal";
+            this.btnrptpersonal.SubItemsExpandWidth = 14;
+            this.btnrptpersonal.Text = "รายละเอียดพนักงาน";
+            this.btnrptpersonal.Click += new System.EventHandler(this.btnrptpersonal_Click);
             // 
-            this.ribbonPanel4.StyleMouseOver.Class = "";
-            this.ribbonPanel4.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel4.TabIndex = 4;
+            // btnrpttimetable
             // 
-            // ribbonBar4
+            this.btnrpttimetable.Image = global::HRSystem.Properties.Resources.clock;
+            this.btnrpttimetable.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrpttimetable.Name = "btnrpttimetable";
+            this.btnrpttimetable.SubItemsExpandWidth = 14;
+            this.btnrpttimetable.Text = "รายงานเวลาทำงาน";
+            this.btnrpttimetable.Click += new System.EventHandler(this.btnrpttimetable_Click);
             // 
-            this.ribbonBar4.AutoOverflowEnabled = true;
+            // btnrptpaysalary
             // 
-            // 
-            // 
-            this.ribbonBar4.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar4.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar4.BackgroundStyle.Class = "";
-            this.ribbonBar4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar4.ContainerControlProcessDialogKey = true;
-            this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnpayperpersonal,
-            this.btnpaypergroup});
-            this.ribbonBar4.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar4.Name = "ribbonBar4";
-            this.ribbonBar4.Size = new System.Drawing.Size(212, 94);
-            this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar4.TabIndex = 0;
-            this.ribbonBar4.Text = "ระบบการจ่ายเงินเดือน";
-            // 
-            // 
-            // 
-            this.ribbonBar4.TitleStyle.Class = "";
-            this.ribbonBar4.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar4.TitleStyleMouseOver.Class = "";
-            this.ribbonBar4.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btnrptpaysalary.Image = global::HRSystem.Properties.Resources.money2;
+            this.btnrptpaysalary.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnrptpaysalary.Name = "btnrptpaysalary";
+            this.btnrptpaysalary.SubItemsExpandWidth = 14;
+            this.btnrptpaysalary.Text = "รายงานการจ่ายเงินเดือน";
             // 
             // ribbonPanel1
             // 
@@ -390,66 +614,50 @@
             this.ribbonBar1.TitleStyleMouseOver.Class = "";
             this.ribbonBar1.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
-            // ribbonPanel3
+            // btnparty
             // 
-            this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.ribbonBar3);
-            this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 0);
-            this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel3.Size = new System.Drawing.Size(1169, 150);
+            this.btnparty.Image = global::HRSystem.Properties.Resources.party;
+            this.btnparty.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnparty.Name = "btnparty";
+            this.btnparty.SubItemsExpandWidth = 14;
+            this.btnparty.Text = "ข้อมูลฝ่าย";
+            this.btnparty.Click += new System.EventHandler(this.btnparty_Click);
             // 
+            // btndepartment
             // 
+            this.btndepartment.Image = global::HRSystem.Properties.Resources.department;
+            this.btndepartment.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btndepartment.Name = "btndepartment";
+            this.btndepartment.SubItemsExpandWidth = 14;
+            this.btndepartment.Text = "ข้อมูลแผนก";
+            this.btndepartment.Click += new System.EventHandler(this.btndepartment_Click);
             // 
-            this.ribbonPanel3.Style.Class = "";
-            this.ribbonPanel3.Style.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            // btnposition
             // 
+            this.btnposition.Image = global::HRSystem.Properties.Resources.position;
+            this.btnposition.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnposition.Name = "btnposition";
+            this.btnposition.SubItemsExpandWidth = 14;
+            this.btnposition.Text = "ข้อมูลตำแหน่ง";
+            this.btnposition.Click += new System.EventHandler(this.btnposition_Click);
             // 
+            // btnpersonaltype
             // 
-            this.ribbonPanel3.StyleMouseDown.Class = "";
-            this.ribbonPanel3.StyleMouseDown.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btnpersonaltype.Image = global::HRSystem.Properties.Resources.personaltype;
+            this.btnpersonaltype.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnpersonaltype.Name = "btnpersonaltype";
+            this.btnpersonaltype.SubItemsExpandWidth = 14;
+            this.btnpersonaltype.Text = "ข้อมูลประเภทพนักงาน";
+            this.btnpersonaltype.Click += new System.EventHandler(this.btnpersonaltype_Click);
             // 
+            // btnuser
             // 
-            // 
-            this.ribbonPanel3.StyleMouseOver.Class = "";
-            this.ribbonPanel3.StyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonPanel3.TabIndex = 3;
-            this.ribbonPanel3.Visible = false;
-            // 
-            // ribbonBar3
-            // 
-            this.ribbonBar3.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar3.BackgroundMouseOverStyle.Class = "";
-            this.ribbonBar3.BackgroundMouseOverStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar3.BackgroundStyle.Class = "";
-            this.ribbonBar3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.ribbonBar3.ContainerControlProcessDialogKey = true;
-            this.ribbonBar3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar3.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btntimetable});
-            this.ribbonBar3.Location = new System.Drawing.Point(3, 0);
-            this.ribbonBar3.Name = "ribbonBar3";
-            this.ribbonBar3.Size = new System.Drawing.Size(141, 147);
-            this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar3.TabIndex = 3;
-            this.ribbonBar3.Text = "ข้อมูลเวลาทำงาน";
-            // 
-            // 
-            // 
-            this.ribbonBar3.TitleStyle.Class = "";
-            this.ribbonBar3.TitleStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            // 
-            // 
-            // 
-            this.ribbonBar3.TitleStyleMouseOver.Class = "";
-            this.ribbonBar3.TitleStyleMouseOver.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.btnuser.Image = global::HRSystem.Properties.Resources.admin;
+            this.btnuser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnuser.Name = "btnuser";
+            this.btnuser.SubItemsExpandWidth = 14;
+            this.btnuser.Text = "ผู้ใช้งานในระบบ";
+            this.btnuser.Click += new System.EventHandler(this.btnuser_Click);
             // 
             // office2007StartButton1
             // 
@@ -615,213 +823,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnpayperpersonal
-            // 
-            this.btnpayperpersonal.Image = global::HRSystem.Properties.Resources.money1;
-            this.btnpayperpersonal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnpayperpersonal.Name = "btnpayperpersonal";
-            this.btnpayperpersonal.SubItemsExpandWidth = 14;
-            this.btnpayperpersonal.Text = "จ่ายเงินเดือนรายบุคคล";
-            this.btnpayperpersonal.Click += new System.EventHandler(this.btnpayperpersonal_Click);
-            // 
-            // btnpaypergroup
-            // 
-            this.btnpaypergroup.Image = global::HRSystem.Properties.Resources.money2;
-            this.btnpaypergroup.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnpaypergroup.Name = "btnpaypergroup";
-            this.btnpaypergroup.SubItemsExpandWidth = 14;
-            this.btnpaypergroup.Text = "จ่ายเงินเดือนแบบกลุ่ม";
-            // 
-            // btnpersonal
-            // 
-            this.btnpersonal.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnpersonal.Image = global::HRSystem.Properties.Resources.user;
-            this.btnpersonal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnpersonal.Name = "btnpersonal";
-            this.btnpersonal.SubItemsExpandWidth = 14;
-            this.btnpersonal.Text = "รายละเอียดพนักงาน";
-            this.btnpersonal.Click += new System.EventHandler(this.btnpersonal_Click);
-            // 
-            // btnaddress
-            // 
-            this.btnaddress.Image = global::HRSystem.Properties.Resources.home;
-            this.btnaddress.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnaddress.Name = "btnaddress";
-            this.btnaddress.SubItemsExpandWidth = 14;
-            this.btnaddress.Text = "ที่อยู่อาศัย";
-            this.btnaddress.Click += new System.EventHandler(this.btnaddress_Click);
-            // 
-            // btnwork
-            // 
-            this.btnwork.Image = global::HRSystem.Properties.Resources.work;
-            this.btnwork.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnwork.Name = "btnwork";
-            this.btnwork.SubItemsExpandWidth = 14;
-            this.btnwork.Text = "การทำงาน";
-            this.btnwork.Click += new System.EventHandler(this.btnwork_Click);
-            // 
-            // btnsalary
-            // 
-            this.btnsalary.Image = global::HRSystem.Properties.Resources.money;
-            this.btnsalary.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnsalary.Name = "btnsalary";
-            this.btnsalary.SubItemsExpandWidth = 14;
-            this.btnsalary.Text = "เงินเดือน";
-            this.btnsalary.Click += new System.EventHandler(this.btnsalary_Click);
-            // 
-            // btnsocialtax
-            // 
-            this.btnsocialtax.Image = global::HRSystem.Properties.Resources.social;
-            this.btnsocialtax.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnsocialtax.Name = "btnsocialtax";
-            this.btnsocialtax.SubItemsExpandWidth = 14;
-            this.btnsocialtax.Text = "ประกันสังคม";
-            this.btnsocialtax.Click += new System.EventHandler(this.btnsocialtax_Click);
-            // 
-            // btnexpenditure
-            // 
-            this.btnexpenditure.Image = global::HRSystem.Properties.Resources.expendition;
-            this.btnexpenditure.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnexpenditure.Name = "btnexpenditure";
-            this.btnexpenditure.SubItemsExpandWidth = 14;
-            this.btnexpenditure.Text = "รายได้ / รายการหัก";
-            this.btnexpenditure.Click += new System.EventHandler(this.btnexpenditure_Click);
-            // 
-            // btnleaveright
-            // 
-            this.btnleaveright.Image = global::HRSystem.Properties.Resources.leave;
-            this.btnleaveright.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnleaveright.Name = "btnleaveright";
-            this.btnleaveright.SubItemsExpandWidth = 14;
-            this.btnleaveright.Text = "สิทธิ์การลา";
-            this.btnleaveright.Click += new System.EventHandler(this.btnleaveright_Click);
-            // 
-            // btnpromoted
-            // 
-            this.btnpromoted.Image = global::HRSystem.Properties.Resources.promoted;
-            this.btnpromoted.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnpromoted.Name = "btnpromoted";
-            this.btnpromoted.SubItemsExpandWidth = 14;
-            this.btnpromoted.Text = "การปรับเงินเดือน";
-            this.btnpromoted.Click += new System.EventHandler(this.btnpromoted_Click);
-            // 
-            // btntimetable
-            // 
-            this.btntimetable.Image = global::HRSystem.Properties.Resources.clock;
-            this.btntimetable.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btntimetable.Name = "btntimetable";
-            this.btntimetable.SubItemsExpandWidth = 14;
-            this.btntimetable.Text = "ดึงเวลาทำงานจากเครื่องสแกน";
-            this.btntimetable.Click += new System.EventHandler(this.btntimetable_Click);
-            // 
-            // btnrptparty
-            // 
-            this.btnrptparty.Image = global::HRSystem.Properties.Resources.party;
-            this.btnrptparty.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrptparty.Name = "btnrptparty";
-            this.btnrptparty.SubItemsExpandWidth = 14;
-            this.btnrptparty.Text = "ข้อมูลฝ่าย";
-            this.btnrptparty.Click += new System.EventHandler(this.btnrptparty_Click);
-            // 
-            // btnrptdepartment
-            // 
-            this.btnrptdepartment.Image = global::HRSystem.Properties.Resources.department;
-            this.btnrptdepartment.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrptdepartment.Name = "btnrptdepartment";
-            this.btnrptdepartment.SubItemsExpandWidth = 14;
-            this.btnrptdepartment.Text = "ข้อมูลแผนก";
-            this.btnrptdepartment.Click += new System.EventHandler(this.btnrptdepartment_Click);
-            // 
-            // btnrptposition
-            // 
-            this.btnrptposition.Image = global::HRSystem.Properties.Resources.position;
-            this.btnrptposition.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrptposition.Name = "btnrptposition";
-            this.btnrptposition.SubItemsExpandWidth = 14;
-            this.btnrptposition.Text = "ข้อมูลตำแหน่ง";
-            this.btnrptposition.Click += new System.EventHandler(this.btnrptposition_Click);
-            // 
-            // btnrptpersonaltype
-            // 
-            this.btnrptpersonaltype.Image = global::HRSystem.Properties.Resources.personaltype;
-            this.btnrptpersonaltype.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrptpersonaltype.Name = "btnrptpersonaltype";
-            this.btnrptpersonaltype.SubItemsExpandWidth = 14;
-            this.btnrptpersonaltype.Text = "ข้อมูลประเภทพนักงาน";
-            this.btnrptpersonaltype.Click += new System.EventHandler(this.btnrptpersonaltype_Click);
-            // 
-            // btnrptpersonal
-            // 
-            this.btnrptpersonal.ButtonStyle = DevComponents.DotNetBar.eButtonStyle.ImageAndText;
-            this.btnrptpersonal.Image = global::HRSystem.Properties.Resources.user;
-            this.btnrptpersonal.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrptpersonal.Name = "btnrptpersonal";
-            this.btnrptpersonal.SubItemsExpandWidth = 14;
-            this.btnrptpersonal.Text = "รายละเอียดพนักงาน";
-            this.btnrptpersonal.Click += new System.EventHandler(this.btnrptpersonal_Click);
-            // 
-            // btnrpttimetable
-            // 
-            this.btnrpttimetable.Image = global::HRSystem.Properties.Resources.clock;
-            this.btnrpttimetable.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrpttimetable.Name = "btnrpttimetable";
-            this.btnrpttimetable.SubItemsExpandWidth = 14;
-            this.btnrpttimetable.Text = "รายงานเวลาทำงาน";
-            this.btnrpttimetable.Click += new System.EventHandler(this.btnrpttimetable_Click);
-            // 
-            // btnrptpaysalary
-            // 
-            this.btnrptpaysalary.Image = global::HRSystem.Properties.Resources.money2;
-            this.btnrptpaysalary.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnrptpaysalary.Name = "btnrptpaysalary";
-            this.btnrptpaysalary.SubItemsExpandWidth = 14;
-            this.btnrptpaysalary.Text = "รายงานการจ่ายเงินเดือน";
-            // 
-            // btnparty
-            // 
-            this.btnparty.Image = global::HRSystem.Properties.Resources.party;
-            this.btnparty.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnparty.Name = "btnparty";
-            this.btnparty.SubItemsExpandWidth = 14;
-            this.btnparty.Text = "ข้อมูลฝ่าย";
-            this.btnparty.Click += new System.EventHandler(this.btnparty_Click);
-            // 
-            // btndepartment
-            // 
-            this.btndepartment.Image = global::HRSystem.Properties.Resources.department;
-            this.btndepartment.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btndepartment.Name = "btndepartment";
-            this.btndepartment.SubItemsExpandWidth = 14;
-            this.btndepartment.Text = "ข้อมูลแผนก";
-            this.btndepartment.Click += new System.EventHandler(this.btndepartment_Click);
-            // 
-            // btnposition
-            // 
-            this.btnposition.Image = global::HRSystem.Properties.Resources.position;
-            this.btnposition.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnposition.Name = "btnposition";
-            this.btnposition.SubItemsExpandWidth = 14;
-            this.btnposition.Text = "ข้อมูลตำแหน่ง";
-            this.btnposition.Click += new System.EventHandler(this.btnposition_Click);
-            // 
-            // btnpersonaltype
-            // 
-            this.btnpersonaltype.Image = global::HRSystem.Properties.Resources.personaltype;
-            this.btnpersonaltype.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnpersonaltype.Name = "btnpersonaltype";
-            this.btnpersonaltype.SubItemsExpandWidth = 14;
-            this.btnpersonaltype.Text = "ข้อมูลประเภทพนักงาน";
-            this.btnpersonaltype.Click += new System.EventHandler(this.btnpersonaltype_Click);
-            // 
-            // btnuser
-            // 
-            this.btnuser.Image = global::HRSystem.Properties.Resources.admin;
-            this.btnuser.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnuser.Name = "btnuser";
-            this.btnuser.SubItemsExpandWidth = 14;
-            this.btnuser.Text = "ผู้ใช้งานในระบบ";
-            this.btnuser.Click += new System.EventHandler(this.btnuser_Click);
-            // 
             // comboItem1
             // 
             this.comboItem1.Image = global::HRSystem.Properties.Resources.print;
@@ -842,11 +843,11 @@
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
-            this.ribbonPanel2.ResumeLayout(false);
-            this.ribbonPanel5.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
-            this.ribbonPanel1.ResumeLayout(false);
+            this.ribbonPanel2.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
+            this.ribbonPanel5.ResumeLayout(false);
+            this.ribbonPanel1.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

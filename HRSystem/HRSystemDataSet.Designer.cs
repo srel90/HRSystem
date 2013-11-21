@@ -3181,9 +3181,15 @@ namespace HRSystem {
             
             private global::System.Data.DataColumn columnpersonalCard;
             
-            private global::System.Data.DataColumn columndateTime;
+            private global::System.Data.DataColumn columntimetable;
             
-            private global::System.Data.DataColumn columntimeStamp;
+            private global::System.Data.DataColumn columnonduty;
+            
+            private global::System.Data.DataColumn columnoffduty;
+            
+            private global::System.Data.DataColumn columnclockIn;
+            
+            private global::System.Data.DataColumn columnclockOut;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3236,17 +3242,41 @@ namespace HRSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn dateTimeColumn {
+            public global::System.Data.DataColumn timetableColumn {
                 get {
-                    return this.columndateTime;
+                    return this.columntimetable;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn timeStampColumn {
+            public global::System.Data.DataColumn ondutyColumn {
                 get {
-                    return this.columntimeStamp;
+                    return this.columnonduty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn offdutyColumn {
+                get {
+                    return this.columnoffduty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn clockInColumn {
+                get {
+                    return this.columnclockIn;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn clockOutColumn {
+                get {
+                    return this.columnclockOut;
                 }
             }
             
@@ -3287,16 +3317,26 @@ namespace HRSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public timetableRow AddtimetableRow(string timeTableID, string personalCard, System.DateTime dateTime, System.TimeSpan timeStamp) {
+            public timetableRow AddtimetableRow(string personalCard, string timetable, System.TimeSpan onduty, System.TimeSpan offduty, System.TimeSpan clockIn, System.TimeSpan clockOut) {
                 timetableRow rowtimetableRow = ((timetableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        timeTableID,
+                        null,
                         personalCard,
-                        dateTime,
-                        timeStamp};
+                        timetable,
+                        onduty,
+                        offduty,
+                        clockIn,
+                        clockOut};
                 rowtimetableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtimetableRow);
                 return rowtimetableRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public timetableRow FindBytimeTableID(int timeTableID) {
+                return ((timetableRow)(this.Rows.Find(new object[] {
+                            timeTableID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3318,26 +3358,40 @@ namespace HRSystem {
             internal void InitVars() {
                 this.columntimeTableID = base.Columns["timeTableID"];
                 this.columnpersonalCard = base.Columns["personalCard"];
-                this.columndateTime = base.Columns["dateTime"];
-                this.columntimeStamp = base.Columns["timeStamp"];
+                this.columntimetable = base.Columns["timetable"];
+                this.columnonduty = base.Columns["onduty"];
+                this.columnoffduty = base.Columns["offduty"];
+                this.columnclockIn = base.Columns["clockIn"];
+                this.columnclockOut = base.Columns["clockOut"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columntimeTableID = new global::System.Data.DataColumn("timeTableID", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columntimeTableID = new global::System.Data.DataColumn("timeTableID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntimeTableID);
                 this.columnpersonalCard = new global::System.Data.DataColumn("personalCard", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpersonalCard);
-                this.columndateTime = new global::System.Data.DataColumn("dateTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndateTime);
-                this.columntimeStamp = new global::System.Data.DataColumn("timeStamp", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntimeStamp);
+                this.columntimetable = new global::System.Data.DataColumn("timetable", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntimetable);
+                this.columnonduty = new global::System.Data.DataColumn("onduty", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnonduty);
+                this.columnoffduty = new global::System.Data.DataColumn("offduty", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnoffduty);
+                this.columnclockIn = new global::System.Data.DataColumn("clockIn", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclockIn);
+                this.columnclockOut = new global::System.Data.DataColumn("clockOut", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnclockOut);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columntimeTableID}, true));
+                this.columntimeTableID.AutoIncrement = true;
                 this.columntimeTableID.AutoIncrementSeed = -1;
                 this.columntimeTableID.AutoIncrementStep = -1;
                 this.columntimeTableID.AllowDBNull = false;
                 this.columntimeTableID.ReadOnly = true;
+                this.columntimeTableID.Unique = true;
                 this.columnpersonalCard.MaxLength = 10;
+                this.columntimetable.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6338,9 +6392,9 @@ namespace HRSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string timeTableID {
+            public int timeTableID {
                 get {
-                    return ((string)(this[this.tabletimetable.timeTableIDColumn]));
+                    return ((int)(this[this.tabletimetable.timeTableIDColumn]));
                 }
                 set {
                     this[this.tabletimetable.timeTableIDColumn] = value;
@@ -6365,33 +6419,81 @@ namespace HRSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime dateTime {
+            public string timetable {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabletimetable.dateTimeColumn]));
+                        return ((string)(this[this.tabletimetable.timetableColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'dateTime\' in table \'timetable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'timetable\' in table \'timetable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletimetable.dateTimeColumn] = value;
+                    this[this.tabletimetable.timetableColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.TimeSpan timeStamp {
+            public System.TimeSpan onduty {
                 get {
                     try {
-                        return ((global::System.TimeSpan)(this[this.tabletimetable.timeStampColumn]));
+                        return ((global::System.TimeSpan)(this[this.tabletimetable.ondutyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'timeStamp\' in table \'timetable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'onduty\' in table \'timetable\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabletimetable.timeStampColumn] = value;
+                    this[this.tabletimetable.ondutyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan offduty {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tabletimetable.offdutyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'offduty\' in table \'timetable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletimetable.offdutyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan clockIn {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tabletimetable.clockInColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'clockIn\' in table \'timetable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletimetable.clockInColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.TimeSpan clockOut {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tabletimetable.clockOutColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'clockOut\' in table \'timetable\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletimetable.clockOutColumn] = value;
                 }
             }
             
@@ -6409,26 +6511,62 @@ namespace HRSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdateTimeNull() {
-                return this.IsNull(this.tabletimetable.dateTimeColumn);
+            public bool IstimetableNull() {
+                return this.IsNull(this.tabletimetable.timetableColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdateTimeNull() {
-                this[this.tabletimetable.dateTimeColumn] = global::System.Convert.DBNull;
+            public void SettimetableNull() {
+                this[this.tabletimetable.timetableColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IstimeStampNull() {
-                return this.IsNull(this.tabletimetable.timeStampColumn);
+            public bool IsondutyNull() {
+                return this.IsNull(this.tabletimetable.ondutyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SettimeStampNull() {
-                this[this.tabletimetable.timeStampColumn] = global::System.Convert.DBNull;
+            public void SetondutyNull() {
+                this[this.tabletimetable.ondutyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsoffdutyNull() {
+                return this.IsNull(this.tabletimetable.offdutyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetoffdutyNull() {
+                this[this.tabletimetable.offdutyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsclockInNull() {
+                return this.IsNull(this.tabletimetable.clockInColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetclockInNull() {
+                this[this.tabletimetable.clockInColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsclockOutNull() {
+                return this.IsNull(this.tabletimetable.clockOutColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetclockOutNull() {
+                this[this.tabletimetable.clockOutColumn] = global::System.Convert.DBNull;
             }
         }
         

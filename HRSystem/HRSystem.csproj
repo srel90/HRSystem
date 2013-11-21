@@ -199,6 +199,12 @@
     <Compile Include="form\rptviewer.Designer.cs">
       <DependentUpon>rptviewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\salarypaymentallperson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\salarypaymentallperson.Designer.cs">
+      <DependentUpon>salarypaymentallperson.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\salarypaymentoneperson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\rptviewer.resx">
       <DependentUpon>rptviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\salarypaymentallperson.resx">
+      <DependentUpon>salarypaymentallperson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\salarypaymentoneperson.resx">
       <DependentUpon>salarypaymentoneperson.cs</DependentUpon>

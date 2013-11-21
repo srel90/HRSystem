@@ -37,6 +37,11 @@ namespace HRSystem.form
 
         private void btnshow_Click(object sender, EventArgs e)
         {
+            if (txtpersonalCard.Text.Equals(string.Empty))
+            {
+                MessageBox.Show("กรุณาเลือกพนักงาน");
+                return;
+            }
             dgv1.Rows.Clear();
             txtleave.Text = "";
             txtlate.Text = "";
@@ -64,18 +69,11 @@ namespace HRSystem.form
                 ot = 0;
                 for (int i = 0; i < TimeTable.Rows.Count; i++)
                 {
-                    if (TimeTable.Rows[i]["dateTime"].ToString().Equals(it.ToString()))
+                    if (TimeTable.Rows[i]["timetable"].ToString().Equals(it.ToString()))
                     {
 
-                        timein = TimeTable.Rows[i]["timeStamp"].ToString();
-                        if ((i + 1) < TimeTable.Rows.Count)
-                        {
-                            if (TimeTable.Rows[i + 1]["dateTime"].ToString().Equals(it.ToString()))
-                            {
-                                timeout = TimeTable.Rows[i + 1]["timeStamp"].ToString();
-                                break;
-                            }
-                        }
+                        timein = TimeTable.Rows[i]["clockIn"].ToString();
+                        timeout = TimeTable.Rows[i]["clockOut"].ToString();
                         break;
                     }
                 }
@@ -115,6 +113,7 @@ namespace HRSystem.form
                
                 enpTimeTable.Add(new enpTimeTable()
                 {
+                    personalCard=personaldata.Rows[0]["personalCard"].ToString(),
                     date = it.ToString("yyyy-MM-dd"),
                     timein=timein,
                     timeout=timeout,
@@ -138,6 +137,7 @@ namespace HRSystem.form
             {
                 int idx = dgv1.Rows.Add();
                 DataGridViewRow row = dgv1.Rows[idx];
+                row.Cells["_personalCard"].Value = it.personalCard;
                 row.Cells["_date"].Value = it.date;
                 row.Cells["_timein"].Value = it.timein;
                 row.Cells["_timeout"].Value = it.timeout;
@@ -180,9 +180,15 @@ namespace HRSystem.form
             else
                 return date.AddDays(1).AddMonths(1).AddDays(-1);
         }
+
+        private void salarypaymentoneperson_Load(object sender, EventArgs e)
+        {
+       
+        }
     }
     class enpTimeTable
     {
+        public string personalCard { get; set; }
         public string date { get; set; }
         public string timein { get; set; }
         public string timeout { get; set; }

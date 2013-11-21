@@ -31,14 +31,17 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txttextfile = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnsave = new DevComponents.DotNetBar.ButtonX();
+            this.btnclear = new DevComponents.DotNetBar.ButtonX();
             this.btnopenfile = new DevComponents.DotNetBar.ButtonX();
             this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
             this.gridtimetable = new System.Windows.Forms.DataGridView();
             this._personalIDCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._date = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this._time = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
-            this.btnclear = new DevComponents.DotNetBar.ButtonX();
-            this.btnsave = new DevComponents.DotNetBar.ButtonX();
+            this._timetable = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
+            this._onduty = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
+            this._offduty = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
+            this._clockIn = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
+            this._clockOut = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridtimetable)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +74,31 @@
             this.txttextfile.Location = new System.Drawing.Point(14, 28);
             this.txttextfile.Name = "txttextfile";
             this.txttextfile.Size = new System.Drawing.Size(467, 20);
-            this.txttextfile.TabIndex = 6;
+            this.txttextfile.TabIndex = 1;
+            // 
+            // btnsave
+            // 
+            this.btnsave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnsave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnsave.Location = new System.Drawing.Point(649, 28);
+            this.btnsave.Name = "btnsave";
+            this.btnsave.Size = new System.Drawing.Size(75, 20);
+            this.btnsave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnsave.TabIndex = 4;
+            this.btnsave.Text = "บันทึก";
+            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            // btnclear
+            // 
+            this.btnclear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnclear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnclear.Location = new System.Drawing.Point(568, 28);
+            this.btnclear.Name = "btnclear";
+            this.btnclear.Size = new System.Drawing.Size(75, 20);
+            this.btnclear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnclear.TabIndex = 3;
+            this.btnclear.Text = "ล้าง";
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // btnopenfile
             // 
@@ -81,7 +108,7 @@
             this.btnopenfile.Name = "btnopenfile";
             this.btnopenfile.Size = new System.Drawing.Size(75, 20);
             this.btnopenfile.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnopenfile.TabIndex = 5;
+            this.btnopenfile.TabIndex = 2;
             this.btnopenfile.Text = "เปิดไฟล์";
             this.btnopenfile.Click += new System.EventHandler(this.btnopenfile_Click);
             // 
@@ -111,8 +138,11 @@
             this.gridtimetable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridtimetable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this._personalIDCard,
-            this._date,
-            this._time});
+            this._timetable,
+            this._onduty,
+            this._offduty,
+            this._clockIn,
+            this._clockOut});
             this.gridtimetable.Location = new System.Drawing.Point(14, 57);
             this.gridtimetable.Name = "gridtimetable";
             this.gridtimetable.Size = new System.Drawing.Size(754, 303);
@@ -124,82 +154,115 @@
             this._personalIDCard.HeaderText = "รหัสบัตรพนักงาน";
             this._personalIDCard.Name = "_personalIDCard";
             // 
-            // _date
+            // _timetable
             // 
-            this._date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._date.HeaderText = "วันที่";
-            this._date.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
-            // 
-            // 
-            // 
-            this._date.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            this._timetable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._timetable.HeaderText = "วันที่";
+            this._timetable.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
             // 
             // 
             // 
-            this._date.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this._date.MonthCalendar.BackgroundStyle.Class = "";
-            this._date.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._timetable.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this._date.MonthCalendar.CommandsBackgroundStyle.Class = "";
-            this._date.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._date.MonthCalendar.DisplayMonth = new System.DateTime(2013, 11, 1, 0, 0, 0, 0);
-            this._date.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this._date.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            this._timetable.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this._timetable.MonthCalendar.BackgroundStyle.Class = "";
+            this._timetable.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             // 
             // 
             // 
-            this._date.MonthCalendar.NavigationBackgroundStyle.Class = "";
-            this._date.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._date.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this._date.Name = "_date";
-            this._date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._date.ShowUpDown = true;
-            // 
-            // _time
-            // 
-            this._time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._time.BackColor = System.Drawing.SystemColors.Window;
+            this._timetable.MonthCalendar.CommandsBackgroundStyle.Class = "";
+            this._timetable.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._timetable.MonthCalendar.DisplayMonth = new System.DateTime(2013, 11, 1, 0, 0, 0, 0);
+            this._timetable.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this._timetable.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
             // 
             // 
             // 
-            this._time.BackgroundStyle.Class = "TextBoxBorder";
-            this._time.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._time.Culture = new System.Globalization.CultureInfo("en-US");
-            this._time.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._time.HeaderText = "เวลา";
-            this._time.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._time.Mask = "##:##";
-            this._time.Name = "_time";
-            this._time.PasswordChar = '\0';
-            this._time.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._time.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._time.Text = "  :";
+            this._timetable.MonthCalendar.NavigationBackgroundStyle.Class = "";
+            this._timetable.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._timetable.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this._timetable.Name = "_timetable";
+            this._timetable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._timetable.ShowUpDown = true;
             // 
-            // btnclear
+            // _onduty
             // 
-            this.btnclear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnclear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnclear.Location = new System.Drawing.Point(568, 28);
-            this.btnclear.Name = "btnclear";
-            this.btnclear.Size = new System.Drawing.Size(75, 20);
-            this.btnclear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnclear.TabIndex = 5;
-            this.btnclear.Text = "ล้าง";
-            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
+            this._onduty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._onduty.BackColor = System.Drawing.SystemColors.Window;
             // 
-            // btnsave
             // 
-            this.btnsave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnsave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnsave.Location = new System.Drawing.Point(649, 28);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(75, 20);
-            this.btnsave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnsave.TabIndex = 5;
-            this.btnsave.Text = "บันทึก";
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            // 
+            this._onduty.BackgroundStyle.Class = "TextBoxBorder";
+            this._onduty.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._onduty.Culture = new System.Globalization.CultureInfo("en-US");
+            this._onduty.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._onduty.HeaderText = "เวลาเริ่มงาน";
+            this._onduty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._onduty.Mask = "##:##";
+            this._onduty.Name = "_onduty";
+            this._onduty.PasswordChar = '\0';
+            this._onduty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._onduty.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this._onduty.Text = "  :";
+            // 
+            // _offduty
+            // 
+            this._offduty.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this._offduty.BackgroundStyle.Class = "TextBoxBorder";
+            this._offduty.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._offduty.Culture = new System.Globalization.CultureInfo("en-US");
+            this._offduty.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._offduty.HeaderText = "เวลาเลิกงาน";
+            this._offduty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._offduty.Mask = "##:##";
+            this._offduty.Name = "_offduty";
+            this._offduty.PasswordChar = '\0';
+            this._offduty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._offduty.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this._offduty.Text = "  :";
+            // 
+            // _clockIn
+            // 
+            this._clockIn.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this._clockIn.BackgroundStyle.Class = "TextBoxBorder";
+            this._clockIn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._clockIn.Culture = new System.Globalization.CultureInfo("en-US");
+            this._clockIn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._clockIn.HeaderText = "ลงเวลาเข้า";
+            this._clockIn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._clockIn.Mask = "##:##";
+            this._clockIn.Name = "_clockIn";
+            this._clockIn.PasswordChar = '\0';
+            this._clockIn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._clockIn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this._clockIn.Text = "  :";
+            // 
+            // _clockOut
+            // 
+            this._clockOut.BackColor = System.Drawing.SystemColors.Window;
+            // 
+            // 
+            // 
+            this._clockOut.BackgroundStyle.Class = "TextBoxBorder";
+            this._clockOut.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._clockOut.Culture = new System.Globalization.CultureInfo("en-US");
+            this._clockOut.ForeColor = System.Drawing.SystemColors.ControlText;
+            this._clockOut.HeaderText = "ลงเวลาออก";
+            this._clockOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this._clockOut.Mask = "##:##";
+            this._clockOut.Name = "_clockOut";
+            this._clockOut.PasswordChar = '\0';
+            this._clockOut.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._clockOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this._clockOut.Text = "  :";
             // 
             // timetable
             // 
@@ -222,12 +285,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView gridtimetable;
         private DevComponents.DotNetBar.Controls.ProgressBarX progressBarX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _personalIDCard;
-        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn _date;
-        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _time;
         private DevComponents.DotNetBar.Controls.TextBoxX txttextfile;
         private DevComponents.DotNetBar.ButtonX btnopenfile;
         private DevComponents.DotNetBar.ButtonX btnclear;
         private DevComponents.DotNetBar.ButtonX btnsave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _personalIDCard;
+        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn _timetable;
+        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _onduty;
+        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _offduty;
+        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _clockIn;
+        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _clockOut;
     }
 }

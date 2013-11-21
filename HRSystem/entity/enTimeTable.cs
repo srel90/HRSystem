@@ -10,7 +10,10 @@ namespace HRSystem.entity
     {
         public int timeTableID { get; set; }
         public string personalCard { get; set; }
-        public string dateTime { get; set; }
-        public string timeStamp { get; set; }
+        public string timetable { get; set; }
+        public string onduty { get; set; }
+        public string offduty { get; set; }
+        public string clockIn { get; set; }
+        public string clockOut { get; set; }
     }
 }

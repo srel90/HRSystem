@@ -1,6 +1,6 @@
 ﻿namespace HRSystem.form
 {
-    partial class rpttimetable
+    partial class salarypaymentallperson
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnprint = new DevComponents.DotNetBar.ButtonX();
             this.btnshow = new DevComponents.DotNetBar.ButtonX();
             this.dateTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtpersonalCardTo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtpersonalCardFrom = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dgv1 = new System.Windows.Forms.DataGridView();
-            this._timeTableID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtpersonalCard = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
+            this.txtpersonalCardto = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.label10 = new System.Windows.Forms.Label();
             this._personalCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._timetable = new DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn();
-            this._onduty = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
-            this._offduty = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
-            this._clockIn = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
-            this._clockOut = new DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn();
+            this._leave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._late = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._latecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._early = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._earlycount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgv1
+            // 
+            this.dgv1.AllowUserToAddRows = false;
+            this.dgv1.AllowUserToDeleteRows = false;
+            this.dgv1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._personalCard,
+            this._leave,
+            this._late,
+            this._latecount,
+            this._early,
+            this._earlycount,
+            this._ot});
+            this.dgv1.Location = new System.Drawing.Point(12, 103);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.ReadOnly = true;
+            this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv1.Size = new System.Drawing.Size(761, 300);
+            this.dgv1.TabIndex = 35;
             // 
             // groupBox1
             // 
@@ -61,18 +85,18 @@
             this.groupBox1.Controls.Add(this.btnshow);
             this.groupBox1.Controls.Add(this.dateTo);
             this.groupBox1.Controls.Add(this.dateFrom);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtpersonalCardto);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtpersonalCardTo);
-            this.groupBox1.Controls.Add(this.txtpersonalCardFrom);
+            this.groupBox1.Controls.Add(this.txtpersonalCard);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(761, 85);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "รายงานเวลาทำงาน";
+            this.groupBox1.Text = "คำนวณเงืนเดือน";
             // 
             // btnprint
             // 
@@ -82,9 +106,8 @@
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(73, 48);
             this.btnprint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnprint.TabIndex = 6;
-            this.btnprint.Text = "พิมพ์";
-            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
+            this.btnprint.TabIndex = 5;
+            this.btnprint.Text = "บันทึกและพิมพ์เงินเดือน";
             // 
             // btnshow
             // 
@@ -94,7 +117,7 @@
             this.btnshow.Name = "btnshow";
             this.btnshow.Size = new System.Drawing.Size(73, 48);
             this.btnshow.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnshow.TabIndex = 5;
+            this.btnshow.TabIndex = 4;
             this.btnshow.Text = "แสดง";
             this.btnshow.Click += new System.EventHandler(this.btnshow_Click);
             // 
@@ -147,7 +170,7 @@
             this.dateTo.ShowUpDown = true;
             this.dateTo.Size = new System.Drawing.Size(200, 20);
             this.dateTo.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateTo.TabIndex = 4;
+            this.dateTo.TabIndex = 3;
             // 
             // dateFrom
             // 
@@ -198,17 +221,8 @@
             this.dateFrom.ShowUpDown = true;
             this.dateFrom.Size = new System.Drawing.Size(200, 20);
             this.dateFrom.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.dateFrom.TabIndex = 3;
+            this.dateFrom.TabIndex = 2;
             this.dateFrom.ValueChanged += new System.EventHandler(this.dateFrom_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(341, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 13);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "ถึง :";
             // 
             // label4
             // 
@@ -233,238 +247,149 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 31;
-            this.label1.Text = "รหัสพนักงานเริ่มต้น :";
+            this.label1.Text = "รหัสพนักงาน :";
             // 
-            // txtpersonalCardTo
-            // 
-            // 
-            // 
-            // 
-            this.txtpersonalCardTo.Border.Class = "TextBoxBorder";
-            this.txtpersonalCardTo.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtpersonalCardTo.ButtonCustom.Visible = true;
-            this.txtpersonalCardTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtpersonalCardTo.Location = new System.Drawing.Point(396, 19);
-            this.txtpersonalCardTo.Name = "txtpersonalCardTo";
-            this.txtpersonalCardTo.Size = new System.Drawing.Size(86, 22);
-            this.txtpersonalCardTo.TabIndex = 2;
-            this.txtpersonalCardTo.ButtonCustomClick += new System.EventHandler(this.txtpersonalCardTo_ButtonCustomClick);
-            // 
-            // txtpersonalCardFrom
+            // txtpersonalCard
             // 
             // 
             // 
             // 
-            this.txtpersonalCardFrom.Border.Class = "TextBoxBorder";
-            this.txtpersonalCardFrom.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtpersonalCardFrom.ButtonCustom.Visible = true;
-            this.txtpersonalCardFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtpersonalCardFrom.Location = new System.Drawing.Point(118, 19);
-            this.txtpersonalCardFrom.Name = "txtpersonalCardFrom";
-            this.txtpersonalCardFrom.Size = new System.Drawing.Size(86, 22);
-            this.txtpersonalCardFrom.TabIndex = 1;
-            this.txtpersonalCardFrom.ButtonCustomClick += new System.EventHandler(this.txtpersonalCardFrom_ButtonCustomClick);
+            this.txtpersonalCard.Border.Class = "TextBoxBorder";
+            this.txtpersonalCard.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtpersonalCard.ButtonCustom.Visible = true;
+            this.txtpersonalCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtpersonalCard.Location = new System.Drawing.Point(118, 19);
+            this.txtpersonalCard.Name = "txtpersonalCard";
+            this.txtpersonalCard.Size = new System.Drawing.Size(86, 22);
+            this.txtpersonalCard.TabIndex = 1;
+            this.txtpersonalCard.ButtonCustomClick += new System.EventHandler(this.txtpersonalCard_ButtonCustomClick);
             // 
-            // dgv1
+            // progressBarX1
             // 
-            this.dgv1.AllowUserToAddRows = false;
-            this.dgv1.AllowUserToDeleteRows = false;
-            this.dgv1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBarX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this._timeTableID,
-            this._personalCard,
-            this._timetable,
-            this._onduty,
-            this._offduty,
-            this._clockIn,
-            this._clockOut});
-            this.dgv1.Location = new System.Drawing.Point(13, 103);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.ReadOnly = true;
-            this.dgv1.Size = new System.Drawing.Size(760, 329);
-            this.dgv1.TabIndex = 33;
+            this.progressBarX1.BackColor = System.Drawing.Color.Black;
             // 
-            // _timeTableID
             // 
-            this._timeTableID.DataPropertyName = "timeTableID";
-            this._timeTableID.HeaderText = "_timeTableID";
-            this._timeTableID.Name = "_timeTableID";
-            this._timeTableID.ReadOnly = true;
-            this._timeTableID.Visible = false;
+            // 
+            this.progressBarX1.BackgroundStyle.Class = "";
+            this.progressBarX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.progressBarX1.Location = new System.Drawing.Point(12, 409);
+            this.progressBarX1.Name = "progressBarX1";
+            this.progressBarX1.Size = new System.Drawing.Size(761, 23);
+            this.progressBarX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
+            this.progressBarX1.TabIndex = 36;
+            this.progressBarX1.Text = "progressBarX1";
+            // 
+            // txtpersonalCardto
+            // 
+            // 
+            // 
+            // 
+            this.txtpersonalCardto.Border.Class = "TextBoxBorder";
+            this.txtpersonalCardto.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtpersonalCardto.ButtonCustom.Visible = true;
+            this.txtpersonalCardto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.txtpersonalCardto.Location = new System.Drawing.Point(322, 19);
+            this.txtpersonalCardto.Name = "txtpersonalCardto";
+            this.txtpersonalCardto.Size = new System.Drawing.Size(86, 22);
+            this.txtpersonalCardto.TabIndex = 1;
+            this.txtpersonalCardto.ButtonCustomClick += new System.EventHandler(this.txtpersonalCardto_ButtonCustomClick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(210, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(73, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "รหัสพนักงาน :";
             // 
             // _personalCard
             // 
-            this._personalCard.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._personalCard.DataPropertyName = "personalCard";
             this._personalCard.HeaderText = "รหัสบัตรพนักงาน";
             this._personalCard.Name = "_personalCard";
             this._personalCard.ReadOnly = true;
             // 
-            // _timetable
+            // _leave
             // 
-            this._timetable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._timetable.DataPropertyName = "timetable";
-            this._timetable.HeaderText = "วันที่";
-            this._timetable.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            this._leave.HeaderText = "ขาดงาน";
+            this._leave.Name = "_leave";
+            this._leave.ReadOnly = true;
             // 
+            // _late
             // 
+            this._late.HeaderText = "เข้าสาย > 30 นาที";
+            this._late.Name = "_late";
+            this._late.ReadOnly = true;
             // 
-            this._timetable.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // _latecount
             // 
+            this._latecount.HeaderText = "เข้าสาย (นาที)";
+            this._latecount.Name = "_latecount";
+            this._latecount.ReadOnly = true;
             // 
+            // _early
             // 
-            this._timetable.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this._timetable.MonthCalendar.BackgroundStyle.Class = "";
-            this._timetable.MonthCalendar.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this._early.HeaderText = "ออกก่อน";
+            this._early.Name = "_early";
+            this._early.ReadOnly = true;
             // 
+            // _earlycount
             // 
+            this._earlycount.HeaderText = "ออกก่อน (นาที)";
+            this._earlycount.Name = "_earlycount";
+            this._earlycount.ReadOnly = true;
             // 
-            this._timetable.MonthCalendar.CommandsBackgroundStyle.Class = "";
-            this._timetable.MonthCalendar.CommandsBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._timetable.MonthCalendar.DisplayMonth = new System.DateTime(2013, 11, 1, 0, 0, 0, 0);
-            this._timetable.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this._timetable.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // _ot
             // 
+            this._ot.HeaderText = "OT นาที";
+            this._ot.Name = "_ot";
+            this._ot.ReadOnly = true;
             // 
-            // 
-            this._timetable.MonthCalendar.NavigationBackgroundStyle.Class = "";
-            this._timetable.MonthCalendar.NavigationBackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._timetable.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
-            this._timetable.Name = "_timetable";
-            this._timetable.ReadOnly = true;
-            this._timetable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._timetable.ShowUpDown = true;
-            // 
-            // _onduty
-            // 
-            this._onduty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this._onduty.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this._onduty.BackgroundStyle.Class = "TextBoxBorder";
-            this._onduty.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._onduty.Culture = new System.Globalization.CultureInfo("en-US");
-            this._onduty.DataPropertyName = "onduty";
-            this._onduty.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._onduty.HeaderText = "เวลาเริ่มงาน";
-            this._onduty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._onduty.Mask = "##:##";
-            this._onduty.Name = "_onduty";
-            this._onduty.PasswordChar = '\0';
-            this._onduty.ReadOnly = true;
-            this._onduty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._onduty.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._onduty.Text = "  :";
-            // 
-            // _offduty
-            // 
-            this._offduty.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this._offduty.BackgroundStyle.Class = "TextBoxBorder";
-            this._offduty.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._offduty.Culture = new System.Globalization.CultureInfo("en-US");
-            this._offduty.DataPropertyName = "offduty";
-            this._offduty.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._offduty.HeaderText = "เวลาเลิกงาน";
-            this._offduty.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._offduty.Mask = "##:##";
-            this._offduty.Name = "_offduty";
-            this._offduty.PasswordChar = '\0';
-            this._offduty.ReadOnly = true;
-            this._offduty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._offduty.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._offduty.Text = "  :";
-            // 
-            // _clockIn
-            // 
-            this._clockIn.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this._clockIn.BackgroundStyle.Class = "TextBoxBorder";
-            this._clockIn.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._clockIn.Culture = new System.Globalization.CultureInfo("en-US");
-            this._clockIn.DataPropertyName = "clockIn";
-            this._clockIn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._clockIn.HeaderText = "ลงเวลาเข้า";
-            this._clockIn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._clockIn.Mask = "##:##";
-            this._clockIn.Name = "_clockIn";
-            this._clockIn.PasswordChar = '\0';
-            this._clockIn.ReadOnly = true;
-            this._clockIn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._clockIn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._clockIn.Text = "  :";
-            // 
-            // _clockOut
-            // 
-            this._clockOut.BackColor = System.Drawing.SystemColors.Window;
-            // 
-            // 
-            // 
-            this._clockOut.BackgroundStyle.Class = "TextBoxBorder";
-            this._clockOut.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this._clockOut.Culture = new System.Globalization.CultureInfo("en-US");
-            this._clockOut.DataPropertyName = "clockOut";
-            this._clockOut.ForeColor = System.Drawing.SystemColors.ControlText;
-            this._clockOut.HeaderText = "ลงเวลาออก";
-            this._clockOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this._clockOut.Mask = "##:##";
-            this._clockOut.Name = "_clockOut";
-            this._clockOut.PasswordChar = '\0';
-            this._clockOut.ReadOnly = true;
-            this._clockOut.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._clockOut.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this._clockOut.Text = "  :";
-            // 
-            // rpttimetable
+            // salarypaymentallperson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 444);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.progressBarX1);
             this.DoubleBuffered = true;
-            this.Name = "rpttimetable";
-            this.Text = "รายงานเวลาทำงาน";
-            this.Load += new System.EventHandler(this.rpttimetable_Load);
+            this.Name = "salarypaymentallperson";
+            this.Text = "จ่ายเงินเดือนรายกลุ่ม";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevComponents.DotNetBar.ButtonX btnprint;
+        private DevComponents.DotNetBar.ButtonX btnshow;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTo;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateFrom;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtpersonalCardTo;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtpersonalCardFrom;
-        private DevComponents.DotNetBar.ButtonX btnshow;
-        private DevComponents.DotNetBar.ButtonX btnprint;
-        private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _timeTableID;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtpersonalCard;
+        private DevComponents.DotNetBar.Controls.ProgressBarX progressBarX1;
+        private System.Windows.Forms.Label label10;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtpersonalCardto;
         private System.Windows.Forms.DataGridViewTextBoxColumn _personalCard;
-        private DevComponents.DotNetBar.Controls.DataGridViewDateTimeInputColumn _timetable;
-        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _onduty;
-        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _offduty;
-        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _clockIn;
-        private DevComponents.DotNetBar.Controls.DataGridViewMaskedTextBoxAdvColumn _clockOut;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _leave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _late;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _latecount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _early;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _earlycount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _ot;
     }
 }

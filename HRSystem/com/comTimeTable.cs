@@ -24,7 +24,7 @@ namespace HRSystem.com
         {
             try
             {
-                str = "select * from timetable where personalCard between @personalCardFrom and @personalCardTo and DATEDIFF(DAY,dateTime,@dateFrom)<=0 and DATEDIFF(DAY,dateTime,@dateTo)>=0";
+                str = "select * from timetable where personalCard between @personalCardFrom and @personalCardTo and DATEDIFF(DAY,timetable,@dateFrom)<=0 and DATEDIFF(DAY,timetable,@dateTo)>=0";
                 Dbcmd = db.GetSqlStringCommand(str);
                 db.AddInParameter(Dbcmd, "@personalCardFrom", DbType.String, personalCardFrom);
                 db.AddInParameter(Dbcmd, "@personalCardTo", DbType.String, personalCardTo);
@@ -42,11 +42,14 @@ namespace HRSystem.com
         {
             try
             {
-                str = "INSERT INTO timetable (personalCard,dateTime,timeStamp)VALUES(@personalCard,@dateTime,@timeStamp);";
+                str = "INSERT INTO timetable (personalCard,timetable,onduty,offduty,clockIn,clockOut)VALUES(@personalCard,@timetable,@onduty,@offduty,@clockIn,@clockOut);";
                 Dbcmd = db.GetSqlStringCommand(str);
                 db.AddInParameter(Dbcmd, "@personalCard", DbType.String, enTimeTable.personalCard);
-                db.AddInParameter(Dbcmd, "@dateTime", DbType.String, enTimeTable.dateTime);
-                db.AddInParameter(Dbcmd, "@timeStamp", DbType.String, enTimeTable.timeStamp);
+                db.AddInParameter(Dbcmd, "@timetable", DbType.String, enTimeTable.timetable);
+                db.AddInParameter(Dbcmd, "@onduty", DbType.String, enTimeTable.onduty);
+                db.AddInParameter(Dbcmd, "@offduty", DbType.String, enTimeTable.offduty);
+                db.AddInParameter(Dbcmd, "@clockIn", DbType.String, enTimeTable.clockIn);
+                db.AddInParameter(Dbcmd, "@clockOut", DbType.String, enTimeTable.clockOut);
                 db.ExecuteNonQuery(Dbcmd);
                 return true;
             }
