@@ -180,12 +180,12 @@ namespace HRSystem.com
                 db.AddInParameter(Dbcmd, "@personalTypeID", DbType.Int32, enWork.personalTypeID);
                 db.AddInParameter(Dbcmd, "@level", DbType.String, enWork.level);
                 db.AddInParameter(Dbcmd, "@workStatus", DbType.Int32, enWork.workStatus);
-                db.AddInParameter(Dbcmd, "@startDate", DbType.DateTime, enWork.startDate);
-                db.AddInParameter(Dbcmd, "@resignDate", DbType.DateTime, enWork.resignDate);
+                db.AddInParameter(Dbcmd, "@startDate", DbType.String, enWork.startDate);
+                db.AddInParameter(Dbcmd, "@resignDate", DbType.String, enWork.resignDate);
                 db.AddInParameter(Dbcmd, "@taxNumber", DbType.String, enWork.taxNumber);
                 db.AddInParameter(Dbcmd, "@idCard", DbType.String, enWork.idCard);
-                db.AddInParameter(Dbcmd, "@issueDate", DbType.DateTime, enWork.issueDate);
-                db.AddInParameter(Dbcmd, "@expireDate", DbType.DateTime, enWork.expireDate);
+                db.AddInParameter(Dbcmd, "@issueDate", DbType.String, enWork.issueDate);
+                db.AddInParameter(Dbcmd, "@expireDate", DbType.String, enWork.expireDate);
                 db.AddInParameter(Dbcmd, "@issueAddress", DbType.String, enWork.issueAddress);
                 db.AddInParameter(Dbcmd, "@idCardAddress", DbType.String, enWork.idCardAddress);
                 db.AddInParameter(Dbcmd, "@timein", DbType.String, enWork.timein);

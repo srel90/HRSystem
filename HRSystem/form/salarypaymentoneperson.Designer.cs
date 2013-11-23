@@ -191,7 +191,8 @@
             this.btnprint.Size = new System.Drawing.Size(73, 48);
             this.btnprint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnprint.TabIndex = 5;
-            this.btnprint.Text = "บันทึกและพิมพ์เงินเดือน";
+            this.btnprint.Text = "บันทึกเงินเดือน";
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // btnshow
             // 
@@ -202,7 +203,7 @@
             this.btnshow.Size = new System.Drawing.Size(73, 48);
             this.btnshow.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnshow.TabIndex = 4;
-            this.btnshow.Text = "แสดง";
+            this.btnshow.Text = "คำนวณเงินเดือน";
             this.btnshow.Click += new System.EventHandler(this.btnshow_Click);
             // 
             // dateTo

@@ -33,7 +33,7 @@ namespace HRSystem.form
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            if (txtusername.Text.Equals("") || txtpassword.Text.Equals(""))
+            if (txtusername.Text.Equals(string.Empty) || txtpassword.Text.Equals(""))
             {
                 label3.Text = "กรุณากรอก ชื่อผู้ใช้ และ รหัสผ่าน";
                 
@@ -66,6 +66,24 @@ namespace HRSystem.form
         {
             this.Close();
             Application.Exit();
+        }
+
+        private void txtusername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl(ActiveControl, true, true, true, true);
+            }
+        }
+
+        private void txtpassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+                if (e.KeyCode == Keys.Enter)
+            {
+                btnlogin.PerformClick();
+            }
         }
     }
 }

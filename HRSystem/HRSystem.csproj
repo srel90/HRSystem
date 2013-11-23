@@ -85,6 +85,7 @@
     <Compile Include="com\comExpenditure.cs" />
     <Compile Include="com\comLeaveRight.cs" />
     <Compile Include="com\comParty.cs" />
+    <Compile Include="com\comPayment.cs" />
     <Compile Include="com\comPeronal.cs" />
     <Compile Include="com\comPersonalAddress.cs" />
     <Compile Include="com\comPersonalType.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="entity\enExpenditure.cs" />
     <Compile Include="entity\enLeaveRight.cs" />
     <Compile Include="entity\enParty.cs" />
+    <Compile Include="entity\enPayment.cs" />
     <Compile Include="entity\enPersonal.cs" />
     <Compile Include="entity\enPersonalAddress.cs" />
     <Compile Include="entity\enPersonalType.cs" />
@@ -109,6 +111,12 @@
     <Compile Include="entity\enTimeTable.cs" />
     <Compile Include="entity\enUser.cs" />
     <Compile Include="entity\enWork.cs" />
+    <Compile Include="form\about.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\about.Designer.cs">
+      <DependentUpon>about.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\department.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +189,12 @@
     <Compile Include="form\positionfrm.Designer.cs">
       <DependentUpon>positionfrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\rptpaysalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\rptpaysalary.Designer.cs">
+      <DependentUpon>rptpaysalary.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\rptpersonal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +249,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utility.cs" />
+    <EmbeddedResource Include="form\about.resx">
+      <DependentUpon>about.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\department.resx">
       <DependentUpon>department.cs</DependentUpon>
     </EmbeddedResource>
@@ -271,6 +288,9 @@
     <EmbeddedResource Include="form\positionfrm.resx">
       <DependentUpon>positionfrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\rptpaysalary.resx">
+      <DependentUpon>rptpaysalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\rptpersonal.resx">
       <DependentUpon>rptpersonal.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +326,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\partylist.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\paymentslip.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\personal.rdlc">
@@ -349,11 +372,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\HRSystem.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="App_Data\HRSystem_log.ldf">
       <DependentUpon>HRSystem.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="images\undo.png" />
     <None Include="Resources\undo1.png" />

@@ -1,6 +1,6 @@
 ﻿namespace HRSystem.form
 {
-    partial class salarypaymentallperson
+    partial class rptpaysalary
     {
         /// <summary>
         /// Required designer variable.
@@ -28,117 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv1 = new System.Windows.Forms.DataGridView();
-            this._personalCard = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._leave = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._late = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._latecount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._early = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._earlycount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._ot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnprint = new DevComponents.DotNetBar.ButtonX();
             this.btnshow = new DevComponents.DotNetBar.ButtonX();
             this.dateTo = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateFrom = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtpersonalCardto = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label1 = new System.Windows.Forms.Label();
             this.txtpersonalCard = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.progressBarX1 = new DevComponents.DotNetBar.Controls.ProgressBarX();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgv1 = new System.Windows.Forms.DataGridView();
+            this._paymentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._personalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._payDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._expenditureInc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._expenditureDec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._leaveDec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._lateDec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._OTInc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._socialTaxDec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._taxDec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dateTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv1
-            // 
-            this.dgv1.AllowUserToAddRows = false;
-            this.dgv1.AllowUserToDeleteRows = false;
-            this.dgv1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this._personalCard,
-            this._leave,
-            this._late,
-            this._latecount,
-            this._early,
-            this._earlycount,
-            this._ot});
-            this.dgv1.Location = new System.Drawing.Point(12, 103);
-            this.dgv1.Name = "dgv1";
-            this.dgv1.ReadOnly = true;
-            this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv1.Size = new System.Drawing.Size(761, 300);
-            this.dgv1.TabIndex = 35;
-            // 
-            // _personalCard
-            // 
-            this._personalCard.HeaderText = "รหัสบัตรพนักงาน";
-            this._personalCard.Name = "_personalCard";
-            this._personalCard.ReadOnly = true;
-            // 
-            // _leave
-            // 
-            this._leave.HeaderText = "ขาดงาน";
-            this._leave.Name = "_leave";
-            this._leave.ReadOnly = true;
-            // 
-            // _late
-            // 
-            this._late.HeaderText = "เข้าสาย > 30 นาที";
-            this._late.Name = "_late";
-            this._late.ReadOnly = true;
-            // 
-            // _latecount
-            // 
-            this._latecount.HeaderText = "เข้าสาย (นาที)";
-            this._latecount.Name = "_latecount";
-            this._latecount.ReadOnly = true;
-            // 
-            // _early
-            // 
-            this._early.HeaderText = "ออกก่อน";
-            this._early.Name = "_early";
-            this._early.ReadOnly = true;
-            // 
-            // _earlycount
-            // 
-            this._earlycount.HeaderText = "ออกก่อน (นาที)";
-            this._earlycount.Name = "_earlycount";
-            this._earlycount.ReadOnly = true;
-            // 
-            // _ot
-            // 
-            this._ot.HeaderText = "OT นาที";
-            this._ot.Name = "_ot";
-            this._ot.ReadOnly = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.btnprint);
-            this.groupBox1.Controls.Add(this.btnshow);
-            this.groupBox1.Controls.Add(this.dateTo);
-            this.groupBox1.Controls.Add(this.dateFrom);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtpersonalCardto);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtpersonalCard);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(761, 85);
-            this.groupBox1.TabIndex = 34;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "คำนวณเงืนเดือน";
             // 
             // btnprint
             // 
@@ -149,7 +67,7 @@
             this.btnprint.Size = new System.Drawing.Size(73, 48);
             this.btnprint.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnprint.TabIndex = 5;
-            this.btnprint.Text = "บันทึกเงินเดือน";
+            this.btnprint.Text = "พิมพ์สลิปเงินเดือน";
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // btnshow
@@ -161,7 +79,7 @@
             this.btnshow.Size = new System.Drawing.Size(73, 48);
             this.btnshow.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnshow.TabIndex = 4;
-            this.btnshow.Text = "คำนวณเงินเดือน";
+            this.btnshow.Text = "ค้นหา";
             this.btnshow.Click += new System.EventHandler(this.btnshow_Click);
             // 
             // dateTo
@@ -285,30 +203,6 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "ตั้งแต่วันที่ :";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(210, 23);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(73, 13);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "รหัสพนักงาน :";
-            // 
-            // txtpersonalCardto
-            // 
-            // 
-            // 
-            // 
-            this.txtpersonalCardto.Border.Class = "TextBoxBorder";
-            this.txtpersonalCardto.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtpersonalCardto.ButtonCustom.Visible = true;
-            this.txtpersonalCardto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtpersonalCardto.Location = new System.Drawing.Point(322, 19);
-            this.txtpersonalCardto.Name = "txtpersonalCardto";
-            this.txtpersonalCardto.Size = new System.Drawing.Size(86, 22);
-            this.txtpersonalCardto.TabIndex = 1;
-            this.txtpersonalCardto.ButtonCustomClick += new System.EventHandler(this.txtpersonalCardto_ButtonCustomClick);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -333,47 +227,175 @@
             this.txtpersonalCard.TabIndex = 1;
             this.txtpersonalCard.ButtonCustomClick += new System.EventHandler(this.txtpersonalCard_ButtonCustomClick);
             // 
-            // progressBarX1
+            // groupBox1
             // 
-            this.progressBarX1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarX1.BackColor = System.Drawing.Color.Black;
+            this.groupBox1.Controls.Add(this.btnprint);
+            this.groupBox1.Controls.Add(this.btnshow);
+            this.groupBox1.Controls.Add(this.dateTo);
+            this.groupBox1.Controls.Add(this.dateFrom);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtpersonalCard);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(761, 85);
+            this.groupBox1.TabIndex = 34;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "คำนวณเงืนเดือน";
             // 
+            // dgv1
             // 
+            this.dgv1.AllowUserToAddRows = false;
+            this.dgv1.AllowUserToDeleteRows = false;
+            this.dgv1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this._paymentID,
+            this._personalID,
+            this._startDate,
+            this._endDate,
+            this._payDate,
+            this._expenditureInc,
+            this._expenditureDec,
+            this._leaveDec,
+            this._lateDec,
+            this._OTInc,
+            this._socialTaxDec,
+            this._taxDec,
+            this._salary,
+            this._total});
+            this.dgv1.Location = new System.Drawing.Point(12, 103);
+            this.dgv1.Name = "dgv1";
+            this.dgv1.ReadOnly = true;
+            this.dgv1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv1.Size = new System.Drawing.Size(761, 329);
+            this.dgv1.TabIndex = 35;
+            this.dgv1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgv1_DataBindingComplete);
             // 
-            this.progressBarX1.BackgroundStyle.Class = "";
-            this.progressBarX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.progressBarX1.Location = new System.Drawing.Point(12, 409);
-            this.progressBarX1.Name = "progressBarX1";
-            this.progressBarX1.Size = new System.Drawing.Size(761, 23);
-            this.progressBarX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.OfficeXP;
-            this.progressBarX1.TabIndex = 36;
-            this.progressBarX1.Text = "progressBarX1";
+            // _paymentID
             // 
-            // salarypaymentallperson
+            this._paymentID.DataPropertyName = "paymentID";
+            this._paymentID.HeaderText = "_paymentID";
+            this._paymentID.Name = "_paymentID";
+            this._paymentID.ReadOnly = true;
+            this._paymentID.Visible = false;
+            // 
+            // _personalID
+            // 
+            this._personalID.DataPropertyName = "personalID";
+            this._personalID.HeaderText = "รหัสพนักงาน";
+            this._personalID.Name = "_personalID";
+            this._personalID.ReadOnly = true;
+            // 
+            // _startDate
+            // 
+            this._startDate.DataPropertyName = "startDate";
+            this._startDate.HeaderText = "วันเริ่มต้น";
+            this._startDate.Name = "_startDate";
+            this._startDate.ReadOnly = true;
+            // 
+            // _endDate
+            // 
+            this._endDate.DataPropertyName = "endDate";
+            this._endDate.HeaderText = "วันสิ้นสุด";
+            this._endDate.Name = "_endDate";
+            this._endDate.ReadOnly = true;
+            // 
+            // _payDate
+            // 
+            this._payDate.DataPropertyName = "payDate";
+            this._payDate.HeaderText = "วันที่บันทึกเงินเดือน";
+            this._payDate.Name = "_payDate";
+            this._payDate.ReadOnly = true;
+            // 
+            // _expenditureInc
+            // 
+            this._expenditureInc.DataPropertyName = "expenditureInc";
+            this._expenditureInc.HeaderText = "รายรับ";
+            this._expenditureInc.Name = "_expenditureInc";
+            this._expenditureInc.ReadOnly = true;
+            // 
+            // _expenditureDec
+            // 
+            this._expenditureDec.DataPropertyName = "expenditureDec";
+            this._expenditureDec.HeaderText = "รายจ่าย";
+            this._expenditureDec.Name = "_expenditureDec";
+            this._expenditureDec.ReadOnly = true;
+            // 
+            // _leaveDec
+            // 
+            this._leaveDec.DataPropertyName = "leaveDec";
+            this._leaveDec.HeaderText = "หักขาดงาน";
+            this._leaveDec.Name = "_leaveDec";
+            this._leaveDec.ReadOnly = true;
+            // 
+            // _lateDec
+            // 
+            this._lateDec.DataPropertyName = "lateDec";
+            this._lateDec.HeaderText = "หักสาย";
+            this._lateDec.Name = "_lateDec";
+            this._lateDec.ReadOnly = true;
+            // 
+            // _OTInc
+            // 
+            this._OTInc.DataPropertyName = "OTInc";
+            this._OTInc.HeaderText = "ค่าล่วงเวลา";
+            this._OTInc.Name = "_OTInc";
+            this._OTInc.ReadOnly = true;
+            // 
+            // _socialTaxDec
+            // 
+            this._socialTaxDec.DataPropertyName = "socialTaxDec";
+            this._socialTaxDec.HeaderText = "หักประกันสังคม";
+            this._socialTaxDec.Name = "_socialTaxDec";
+            this._socialTaxDec.ReadOnly = true;
+            // 
+            // _taxDec
+            // 
+            this._taxDec.DataPropertyName = "taxDec";
+            this._taxDec.HeaderText = "นำส่งภาษ๊";
+            this._taxDec.Name = "_taxDec";
+            this._taxDec.ReadOnly = true;
+            // 
+            // _salary
+            // 
+            this._salary.DataPropertyName = "salary";
+            this._salary.HeaderText = "เงินเดือน";
+            this._salary.Name = "_salary";
+            this._salary.ReadOnly = true;
+            // 
+            // _total
+            // 
+            this._total.DataPropertyName = "total";
+            this._total.HeaderText = "ยอดสุทธิ";
+            this._total.Name = "_total";
+            this._total.ReadOnly = true;
+            // 
+            // rptpaysalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 444);
-            this.Controls.Add(this.dgv1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.progressBarX1);
-            this.DoubleBuffered = true;
-            this.Name = "salarypaymentallperson";
-            this.Text = "จ่ายเงินเดือนรายกลุ่ม";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Controls.Add(this.dgv1);
+            this.Name = "rptpaysalary";
+            this.Text = "รายงานการจ่ายเงินเดือน";
             ((System.ComponentModel.ISupportInitialize)(this.dateTo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateFrom)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgv1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private DevComponents.DotNetBar.ButtonX btnprint;
         private DevComponents.DotNetBar.ButtonX btnshow;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTo;
@@ -382,15 +404,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtpersonalCard;
-        private DevComponents.DotNetBar.Controls.ProgressBarX progressBarX1;
-        private System.Windows.Forms.Label label10;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtpersonalCardto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _personalCard;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _leave;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _late;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _latecount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _early;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _earlycount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _ot;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _paymentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _personalID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _startDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _endDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _payDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _expenditureInc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _expenditureDec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _leaveDec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _lateDec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _OTInc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _socialTaxDec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _taxDec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _salary;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _total;
     }
 }

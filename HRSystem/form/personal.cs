@@ -366,12 +366,12 @@ namespace HRSystem.form
             enWork.personalTypeID = Convert.ToInt16(string.IsNullOrEmpty(txtpersonalTypeID.Text) ? null : txtpersonalTypeID.Text);
             enWork.level = txtlevel.Text;
             enWork.workStatus = Convert.ToInt16(cboworkStatus.SelectedValue);
-            enWork.startDate = (DateTime)dtstartDate.Value;
-            enWork.resignDate = (DateTime)dtresignDate.Value;
+            enWork.startDate = dtstartDate.Text;
+            enWork.resignDate = dtresignDate.Text;
             enWork.taxNumber = txttaxNumber.Text;
             enWork.idCard = txtidCard.Text;
-            enWork.issueDate = (DateTime)dtissueDate.Value;
-            enWork.expireDate = (DateTime)dtexpireDate.Value;
+            enWork.issueDate = dtissueDate.Text;
+            enWork.expireDate = dtexpireDate.Text;
             enWork.issueAddress = txtissueAddress.Text;
             enWork.idCardAddress = txtidCardAddress.Text;
             enWork.timein = txttimein.Text;
@@ -421,7 +421,7 @@ namespace HRSystem.form
                 {
                     expenditureID = Convert.ToInt16(row.Cells["_gvaddexpenditureID"].Value==null ? null : row.Cells["_gvaddexpenditureID"].Value.ToString()),
                     personalID = personalID,
-                    expenditureType = 0,
+                    expenditureType = 1,
                     description = row.Cells["_gvadddescription"].Value.ToString(),
                     calSocialTax = row.Cells["_gvaddcalSocialTax"].Value.ToString(),
                     calTax = row.Cells["_gvaddcalTax"].Value.ToString(),
@@ -435,7 +435,7 @@ namespace HRSystem.form
                 {
                     expenditureID = Convert.ToInt16( string.IsNullOrEmpty(row.Cells["_gvminuexpenditureID"].Value.ToString()) ? null:row.Cells["_gvminuexpenditureID"].Value.ToString()),
                     personalID = personalID,
-                    expenditureType = 1,
+                    expenditureType = 0,
                     description = row.Cells["_gvminudescription"].Value.ToString(),
                     calSocialTax = row.Cells["_gvminucalSocialTax"].Value.ToString(),
                     calTax = row.Cells["_gvminucalTax"].Value.ToString(),
@@ -893,7 +893,7 @@ namespace HRSystem.form
                 txtreligion.Text = dgv1.Rows[e.RowIndex].Cells["_religion"].Value.ToString();
                 cbopersonalStatus.SelectedValue = dgv1.Rows[e.RowIndex].Cells["_personalStatus"].Value.ToString();
                 cbomilitaryStatus.SelectedValue = dgv1.Rows[e.RowIndex].Cells["_militaryStatus"].Value.ToString();
-                dtbirthdate.Value = (DateTime)dgv1.Rows[e.RowIndex].Cells["_birthdate"].Value;
+                dtbirthdate.Text = dgv1.Rows[e.RowIndex].Cells["_birthdate"].Value.ToString();
                 txtoldphoto.Text = dgv1.Rows[e.RowIndex].Cells["_photo"].Value.ToString();
                 if (!dgv1.Rows[e.RowIndex].Cells["_photo"].Value.ToString().Equals(string.Empty))
                 {
@@ -949,12 +949,12 @@ namespace HRSystem.form
                     txtpersonalTypeID.Text = dt.Rows[0]["personalTypeID"].ToString();
                     txtlevel.Text = dt.Rows[0]["level"].ToString();
                     cboworkStatus.SelectedValue = dt.Rows[0]["workStatus"].ToString();
-                    dtstartDate.Value = (DateTime)dt.Rows[0]["startDate"];
-                    dtresignDate.Value = (DateTime)dt.Rows[0]["resignDate"];
+                    dtstartDate.Text = dt.Rows[0]["startDate"].ToString();
+                    dtresignDate.Text = dt.Rows[0]["resignDate"].ToString();
                     txttaxNumber.Text = dt.Rows[0]["taxNumber"].ToString();
                     txtidCard.Text = dt.Rows[0]["idCard"].ToString();
-                    dtissueDate.Value = (DateTime)dt.Rows[0]["issueDate"];
-                    dtexpireDate.Value = (DateTime)dt.Rows[0]["expireDate"];
+                    dtissueDate.Text = dt.Rows[0]["issueDate"].ToString();
+                    dtexpireDate.Text = dt.Rows[0]["expireDate"].ToString();
                     txtissueAddress.Text = dt.Rows[0]["issueAddress"].ToString();
                     txtidCardAddress.Text = dt.Rows[0]["idCardAddress"].ToString();
                     txttimein.Text = dt.Rows[0]["timein"].ToString();
@@ -967,8 +967,8 @@ namespace HRSystem.form
                     txtbank.Text = dt.Rows[0]["bank"].ToString();
                     txtaccountNumber.Text = dt.Rows[0]["accountNumber"].ToString();
                     cbocalculateType.SelectedValue = dt.Rows[0]["calculateType"].ToString();
-                    txtsalary.Text =dt.Rows[0]["salary"].ToString();
-                    txtshiftSalary.Text = dt.Rows[0]["shiftSalary"].ToString();
+                    txtsalary.Text = string.IsNullOrEmpty(dt.Rows[0]["salary"].ToString()) ? null : dt.Rows[0]["salary"].ToString();
+                    txtshiftSalary.Text =  string.IsNullOrEmpty(dt.Rows[0]["shiftSalary"].ToString()) ? null : dt.Rows[0]["shiftSalary"].ToString();
                     if (dt.Rows[0]["calTax"].ToString().Equals("Y"))
                     {
                         rdocalTax_1.Checked = true;
@@ -1009,7 +1009,7 @@ namespace HRSystem.form
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
 
-                    if (dt.Rows[i]["expenditureType"].Equals(0))
+                    if (dt.Rows[i]["expenditureType"].Equals(1))
                     {
                         int idx = gvadd.Rows.Add();
                         DataGridViewRow row = gvadd.Rows[idx];
@@ -1022,17 +1022,17 @@ namespace HRSystem.form
                         row.Cells["_gvaddamount"].Value = dt.Rows[i]["amount"];
                         
                     }
-                    else if (dt.Rows[i]["expenditureType"].Equals(1))
+                    else if (dt.Rows[i]["expenditureType"].Equals(0))
                     {
                         int idx = gvminu.Rows.Add();
                         DataGridViewRow row = gvminu.Rows[idx];
-                        row.Cells["_gvaddexpenditureID"].Value = (int)dt.Rows[i]["expenditureID"];
-                        row.Cells["_gvaddpersonalID"].Value = (int)dt.Rows[i]["personalID"];
-                        row.Cells["_gvaddexpenditureType"].Value = (int)dt.Rows[i]["expenditureType"];
-                        row.Cells["_gvadddescription"].Value = dt.Rows[i]["description"].ToString();
-                        row.Cells["_gvaddcalTax"].Value = dt.Rows[i]["calTax"].ToString();
-                        row.Cells["_gvaddcalSocialTax"].Value = dt.Rows[i]["calSocialTax"].ToString();
-                        row.Cells["_gvaddamount"].Value = (double)dt.Rows[i]["amount"];
+                        row.Cells["_gvminuexpenditureID"].Value = (int)dt.Rows[i]["expenditureID"];
+                        row.Cells["_gvminupersonalID"].Value = (int)dt.Rows[i]["personalID"];
+                        row.Cells["_gvminuexpenditureType"].Value = (int)dt.Rows[i]["expenditureType"];
+                        row.Cells["_gvminudescription"].Value = dt.Rows[i]["description"].ToString();
+                        row.Cells["_gvminucalTax"].Value = dt.Rows[i]["calTax"].ToString();
+                        row.Cells["_gvminucalSocialTax"].Value = dt.Rows[i]["calSocialTax"].ToString();
+                        row.Cells["_gvminuamount"].Value = (double)dt.Rows[i]["amount"];
                     }
                 }
 
@@ -1059,7 +1059,7 @@ namespace HRSystem.form
                     DataGridViewRow row = gvppromoted.Rows[idx];
                     row.Cells["_gvppromotedID"].Value = (int)dt.Rows[i]["promotedID"];
                     row.Cells["_gvppersonalID"].Value = dt.Rows[i]["personalID"];
-                    row.Cells["_gvpupdateDate"].Value = (DateTime)dt.Rows[i]["updateDate"];
+                    row.Cells["_gvpupdateDate"].Value = dt.Rows[i]["updateDate"].ToString();
                     row.Cells["_gvpoldSalary"].Value = dt.Rows[i]["oldSalary"];
                     row.Cells["_gvpoldPositionID"].Value = (int)dt.Rows[i]["oldPositionID"];
                     row.Cells["_gvpoldPositionDetail"].Value = dt.Rows[i]["oldPositionDetail"].ToString();

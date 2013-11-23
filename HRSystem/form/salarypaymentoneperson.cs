@@ -185,6 +185,140 @@ namespace HRSystem.form
         {
        
         }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            if (dgv1.Rows.Count != 0)
+            {
+                comPersonal comPersonal = new comPersonal();
+                comExpenditure comExpenditure = new comExpenditure();
+                comSalary comSalary = new comSalary();
+                comPayment comPayment=new comPayment();
+                DataTable dtpersonal,dtsalary,dtexpenditure;
+                enPayment enPayment = new enPayment();
+                double salary = 0.0;//เงินเดือน
+                double outcome = 0.0;//รายจ่าย
+                double income = 0.0;//รายรับ
+                double incomewithnotax = 0.0;//รายรับไม่ต้องเสียภาษี
+                double taxDec = 0.0;//หักภาษี
+                double socialTaxDec = 0.0;//หักประกันสังคม
+                double lateDec = 0.0;//หักสาย
+                double leaveDec = 0.0;//หักขาด
+                double ot = 0.0;//โอที
+                double total = 0.0;//สุทธิ
+
+                dtpersonal = comPersonal.selectPersonalByPersonalCardID(Convert.ToInt32(txtpersonalCard.Text)).Tables[0];
+                int personalID = Convert.ToInt32(dtpersonal.Rows[0]["personalID"].ToString());
+
+                dtsalary = comSalary.selectAllSalaryByPersonalID(personalID).Tables[0];
+                if (dtsalary.Rows[0]["calculateType"].Equals(0))//กรณีเงินเดือน
+                {
+                    salary = Convert.ToDouble(dtsalary.Rows[0]["salary"].ToString());
+
+                }
+                else//กรณีรายวัน รายกะ คำนวนตามจำนวนวันที่ทำงาน
+                {
+                    salary = Convert.ToDouble(dtsalary.Rows[0]["shiftsalary"].ToString());
+                    DateTime startDate = DateTime.Parse(dateFrom.Text);
+                    DateTime endDate = DateTime.Parse(dateTo.Text);
+                    TimeSpan ts = (endDate.AddDays(1) - startDate);
+                    int workday = ts.Days - Convert.ToInt32(txtleave.Text);
+                    salary *= workday;
+                }
+
+                dtexpenditure = comExpenditure.selectAllExpenditureByPersonalID(personalID).Tables[0];
+                for (int i = 0; i < dtexpenditure.Rows.Count; i++)
+                {
+                    if (dtexpenditure.Rows[i]["expenditureType"].Equals(0))//รายจ่ายไม่ต้องคำนวนภาษี
+                    {
+                        outcome += Convert.ToDouble(dtexpenditure.Rows[i]["amount"].ToString());
+                    }
+                    else if (dtexpenditure.Rows[i]["expenditureType"].Equals(1))//รายรับคำนวนภาษี
+                    {
+
+                        if (dtexpenditure.Rows[i]["calTax"].Equals("Y"))
+                        {
+                            income += Convert.ToDouble(dtexpenditure.Rows[i]["amount"].ToString());
+                        }
+                        else
+                        {
+                            incomewithnotax += Convert.ToDouble(dtexpenditure.Rows[i]["amount"].ToString());
+                        }
+
+                    }
+                }
+                
+                if ((salary + income) > 15000)
+                {
+                    taxDec += (salary * 0.03);//หักภาษีจากเงินเดือน
+                    taxDec += (income * 0.03);//หักภาษีจากรายได้ที่ต้องหักภาษี
+                }
+                if (salary > 15000)//หักประกันสังคม
+                {
+                    socialTaxDec = 750;//หักประกันสังคมสูงสุดที่ฐานเงินเดือน 15000
+                }
+                else
+                {
+                    socialTaxDec = salary * 0.05;
+                }
+                if (!dtsalary.Rows[0]["lateDeduct"].Equals(0))//กรณีหักเงินมาสาย
+                {
+                    if (Convert.ToInt32(txtlatecount.Text) >= 60)//ถ้ามาสาย 60 นาทีขึ้นไป
+                    {
+                        lateDec = 0;//กำหนดว่าหักเท่าไร
+                    }
+                }
+                if (!dtsalary.Rows[0]["leaveDeduct"].Equals(0))//กรณีหักเงินขาดงาน
+                {
+                    double leavecount = Convert.ToInt32(txtleave.Text);//จำนวนวันที่ขาดงาน
+                    leaveDec = 0;//กำหนดว่าหักเท่าไร
+                }
+
+                int otcount= Convert.ToInt32(txtot.Text);//ทำโอทีกี่นาที
+                ot = 0;//กำหนดว่าจ่ายโอทีเท่าไร
+
+                total += salary;
+                total += income;
+                total += incomewithnotax;
+                total += ot;
+                total -= outcome;
+                total -= taxDec;
+                total -= socialTaxDec;
+                total -= lateDec;
+                total -= leaveDec;
+
+                enPayment.personalID = personalID;
+                enPayment.startDate = dateFrom.Text;
+                enPayment.endDate = dateTo.Text;
+                enPayment.payDate = DateTime.Now.ToString();
+                enPayment.expenditureInc = income;
+                enPayment.expenditureDec = outcome;
+                enPayment.leaveDec = leaveDec;
+                enPayment.lateDec = lateDec;
+                enPayment.OTInc = ot;
+                enPayment.socialTaxDec = socialTaxDec;
+                enPayment.taxDec = taxDec;
+                enPayment.salary = salary;
+                enPayment.total = total;
+
+                if (comPayment.insertPayment(enPayment))
+                {
+                    MessageBox.Show("บันทึกข้อมูลเงินเดือนเรียบร้อยแล้ว");
+                    dgv1.Rows.Clear();
+                    txtleave.Text = "";
+                    txtlate.Text = "";
+                    txtlatecount.Text = "";
+                    txtearly.Text = "";
+                    txtearlycount.Text = "";
+                    txtot.Text = "";
+                    progressBarX1.Value = 0;
+                }
+            }
+            else
+            {
+                MessageBox.Show("ไม่มีข้อมูลการทำงานกรุณาคำนวณเงินเดือน");
+            }
+        }
     }
     class enpTimeTable
     {

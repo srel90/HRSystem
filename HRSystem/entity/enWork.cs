@@ -16,12 +16,12 @@ namespace HRSystem.entity
         public int personalTypeID { get; set; }
         public string level { get; set; }
         public int workStatus { get; set; }
-        public DateTime startDate { get; set; }
-        public DateTime resignDate { get; set; }
+        public string startDate { get; set; }
+        public string resignDate { get; set; }
         public string taxNumber { get; set; }
         public string idCard { get; set; }
-        public DateTime issueDate { get; set; }
-        public DateTime expireDate { get; set; }
+        public string issueDate { get; set; }
+        public string expireDate { get; set; }
         public string issueAddress { get; set; }
         public string idCardAddress { get; set; }
         public string timein { get; set; }

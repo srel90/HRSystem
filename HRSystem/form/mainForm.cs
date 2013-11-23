@@ -25,6 +25,8 @@ namespace HRSystem.form
         timetable timetable;
         salarypaymentoneperson salarypaymentoneperson;
         salarypaymentallperson salarypaymentallperson;
+        rptpaysalary rptpaysalary;
+        about about;
         comParty comParty = new comParty();
         comDepartment comDepartment = new comDepartment();
         comPosition comPosition = new comPosition();
@@ -213,6 +215,16 @@ namespace HRSystem.form
         private void btnpaypergroup_Click(object sender, EventArgs e)
         {
             DisplayForm<salarypaymentallperson>(ref salarypaymentallperson);
+        }
+
+        private void btnrptpaysalary_Click(object sender, EventArgs e)
+        {
+            DisplayForm<rptpaysalary>(ref rptpaysalary);
+        }
+
+        private void buttonItem4_Click(object sender, EventArgs e)
+        {
+            DisplayForm<about>(ref about);
         }
 
     }
