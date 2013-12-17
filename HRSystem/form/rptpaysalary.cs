@@ -59,7 +59,7 @@ namespace HRSystem.form
             if (personaldata.Rows.Count != 0)
             {
                 personalID = Convert.ToInt32(personaldata.Rows[0]["personalID"].ToString());
-                DataTable payment = comPayment.selectAllPaymentByPersonalIDAndstartDateendDate(personalID, startDate, endDate).Tables[0];
+                DataTable payment = comPayment.selectAllPaymentByPersonalIDAndstartDateendDatePayslip(personalID, startDate, endDate).Tables[0];
                 if (payment.Rows.Count != 0)
                 {
                     dgv1.DataSource = payment;
@@ -90,15 +90,26 @@ namespace HRSystem.form
                 {
                     dt.Columns.Add(column.DataPropertyName);
                 }
+                dt.Columns.Add("bahttext");
                 for (int i = 0; i < dgv1.SelectedRows.Count; i++)
                 {
                     DataRow dr = dt.NewRow();
+                    string bahttext = "";
                     for (int j = 0; j < dgv1.Columns.Count; j++)
                     {
-                        dr[j] = dgv1.SelectedRows[i].Cells[j].Value;
+                        if (j == 12)
+                        {
+                            bahttext = utility.ToBahtText(Convert.ToDouble(dgv1.SelectedRows[i].Cells[j].Value));
+                        }
+                        
+                            dr[j] = dgv1.SelectedRows[i].Cells[j].Value;
+                        
                     }
+                    dr["bahttext"] = bahttext;
                     dt.Rows.Add(dr);
                 }
+                
+
                 DataSet ds = new DataSet();
                 ds.Tables.Add(dt);
                 DisplayForm<rptviewer>(ref rptviewer);

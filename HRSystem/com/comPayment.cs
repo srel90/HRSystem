@@ -55,6 +55,24 @@ namespace HRSystem.com
                 throw new Exception(ex.Message);
             }
         }
+        public DataSet selectAllPaymentByPersonalIDAndstartDateendDatePayslip(int personalID, string startDate, string endDate)
+        {
+
+            try
+            {
+                str = "SELECT pm.*,p.title,p.name,p.lastname,pt.name as party,d.name as department,po.position FROM payment pm LEFT OUTER JOIN personal p ON pm.personalID=p.personalID LEFT OUTER JOIN work w ON pm.personalID=w.personalID LEFT OUTER JOIN party pt ON w.partyID=pt.partyID LEFT OUTER JOIN department d ON w.departmentID=d.departmentID LEFT OUTER JOIN position po ON w.positionID=po.positionID  WHERE pm.personalID=@personalID AND datediff(d,pm.startDate,@startDate)=0 AND datediff(d,pm.endDate,@endDate)=0 order by pm.payDate desc";
+                Dbcmd = db.GetSqlStringCommand(str);
+                db.AddInParameter(Dbcmd, "@personalID", DbType.Int32, personalID);
+                db.AddInParameter(Dbcmd, "@startDate", DbType.String, startDate);
+                db.AddInParameter(Dbcmd, "@endDate", DbType.String, endDate);
+                ds = db.ExecuteDataSet(Dbcmd);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public Boolean insertPayment(enPayment enPayment)
         {

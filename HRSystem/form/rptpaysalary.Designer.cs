@@ -40,6 +40,12 @@
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this._paymentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._personalID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._party = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._payDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -257,6 +263,12 @@
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this._paymentID,
             this._personalID,
+            this._title,
+            this._name,
+            this._lastname,
+            this._party,
+            this._department,
+            this._position,
             this._startDate,
             this._endDate,
             this._payDate,
@@ -291,6 +303,48 @@
             this._personalID.HeaderText = "รหัสพนักงาน";
             this._personalID.Name = "_personalID";
             this._personalID.ReadOnly = true;
+            // 
+            // _title
+            // 
+            this._title.DataPropertyName = "title";
+            this._title.HeaderText = "คำนำหน้า";
+            this._title.Name = "_title";
+            this._title.ReadOnly = true;
+            // 
+            // _name
+            // 
+            this._name.DataPropertyName = "name";
+            this._name.HeaderText = "ชื่อ";
+            this._name.Name = "_name";
+            this._name.ReadOnly = true;
+            // 
+            // _lastname
+            // 
+            this._lastname.DataPropertyName = "lastname";
+            this._lastname.HeaderText = "นามสกุล";
+            this._lastname.Name = "_lastname";
+            this._lastname.ReadOnly = true;
+            // 
+            // _party
+            // 
+            this._party.DataPropertyName = "party";
+            this._party.HeaderText = "ฝ่าย";
+            this._party.Name = "_party";
+            this._party.ReadOnly = true;
+            // 
+            // _department
+            // 
+            this._department.DataPropertyName = "department";
+            this._department.HeaderText = "แผนก";
+            this._department.Name = "_department";
+            this._department.ReadOnly = true;
+            // 
+            // _position
+            // 
+            this._position.DataPropertyName = "position";
+            this._position.HeaderText = "ตำแหน่ง";
+            this._position.Name = "_position";
+            this._position.ReadOnly = true;
             // 
             // _startDate
             // 
@@ -408,6 +462,12 @@
         private System.Windows.Forms.DataGridView dgv1;
         private System.Windows.Forms.DataGridViewTextBoxColumn _paymentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn _personalID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _lastname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _party;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _department;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _position;
         private System.Windows.Forms.DataGridViewTextBoxColumn _startDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn _endDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn _payDate;
